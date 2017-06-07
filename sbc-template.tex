@@ -21,6 +21,7 @@
 \RestyleAlgo{ruled}
 \usepackage{fancybox}
 \usepackage{siunitx}
+\usepackage{subcaption}
 
 \graphicspath{ {Figures/} }
 
@@ -46,15 +47,281 @@
 
 \title{Virtual Reality 1}
 
-\author{Dongho Kang, Jaeyoung Lim, Soomin Lee, Jaeryeong Choi}
+\author{Dongho Kang, Jaeyoung Lim, Soomin Lee and Jaeryeong Choi}
 
-\address{kangd@ethz.ch}
+\address{\{kangd, jalim\}@ethz.ch}
 
 \begin{document} 
 
 \maketitle
 
 \section{Chapter 1: Introduction into Virtual Reality}
+
+\setcounter{subsection}{1}	% 1.1 omitted
+
+%----------------------------------------------------------------------------------------
+\subsection{The development of the computer}
+
+\begin{itemize}
+	\item \textbf{the constant increase of computational power available in modern computer} $\rightarrow$ today's abundance of virtual reality. 
+\end{itemize}
+
+\subsubsection*{Numbers}
+\begin{itemize}
+	\item 6000 years ago: the earliest use of numbers. 
+		\begin{itemize}
+			\item 3300 B.C. Egypt: battle report in hieroglyphs.
+		\end{itemize} 
+	\item number system 
+		\begin{itemize}
+			\item The first number systems exist in hieroglyphs \\ e.g. $1=\textit{line}$, $10=\textit{horseshoe}$ ...
+			\item Roman: 
+
+				\begin{table}[h]
+				\centering
+				\begin{tabular}{| c | c | }
+				\hline
+				I $= 1$		& V $= 5$ 	\\
+				\hline 
+				X $= 10$	& L $= 50$ 	\\
+				\hline							
+				C $= 100$	& D $= 500$ \\
+				\hline					
+				M $= 1000$ 	& 			\\		
+				\hline					
+				\end{tabular}
+				\end{table}
+				
+				\begin{center}
+				$2388 =$ MMCCCLXXXVIII
+				\end{center}
+			
+			\item Addition-system (Roman, Greeks, Syrians, Slavic tribes ...): large numbers are made by adding up the symbols 
+			\item Indo-Arabian: the system used until today (1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
+				\begin{itemize}
+					\item more complicated calculation can be performed very easily.
+					\item very forgery-proof
+					\item 6th century: Indian to Mesopotamia (Severus Sebakt)
+					\item 10th century: came to Europe (Leonardo Fibonacci)
+					\item 16th century: printing numbers were introduced (Adam Ries and Albrecht Dürer) 
+				\end{itemize}				
+		\end{itemize}
+\end{itemize}
+
+\subsubsection*{Calculation and calculation machine}
+
+\begin{itemize}
+	\item First means to calculate
+		\begin{itemize}
+			\item calculating with the fingers - Rome: 40 finger positions, displays up to 200000
+			\item tally stick (Europe), knots (native Americans)
+		\end{itemize}
+	\item The first scientific calculation: \textbf{abacus} 
+	\item \textbf{Written calculation became popular (since 15c)}
+		\begin{itemize}
+			\item eased calculations and reduced the required time.
+			\item lowered the failure rate.
+		\end{itemize} 
+	\item The first calculation machine (W. Schickardt, 17c) \textbf{Figure 1.16, page 1-12}
+		\begin{itemize}
+			\item add numbers up to 6 digits
+			\item multiplication were possible. 
+			\item toothed gears and slide rules. 
+		\end{itemize}
+	\item B. Pascal(1623 - 1662) \textbf{Figure 1.17, page 1-12}
+		\begin{itemize}
+			\item made money with calculation machine (the first one) 
+			\item add and subtract numbers with 8 digits. 
+			\item more than 50 pieces were produced. 
+		\end{itemize}
+	\item G. W. Leibniz (1646 - 1716) \textbf{Figure 1.18, page 1-12}
+		\begin{itemize}
+			\item introduced the machine suitable for all four basic calculation. 
+		\end{itemize} 
+	\item The calculating machines of 18c: more reliable, but became a piece of jewelry than a device for daily use \textbf{Figure 1.19, page 1-13}
+	\item C. X. Thomas (1785 - 1870) \textbf{Figure 1.20, page 1-13}
+		\begin{itemize}
+			\item precise, efficient and ergonomic.
+			\item "arithmometer": multiplied two numbers with 8 digits in 18 sec.
+			\item more improved later 	
+		\end{itemize}
+	\item \textbf{Programmable calculation machines} (C. Babbage, 1792 - 1871)
+		\begin{itemize}
+			\item punched cards for programming. 
+			\item could run the program autonomously.
+			\item used steam machine and weights, but failed to realize his idea. 
+		\end{itemize}
+	\item \textbf{Calculation machine with electrical devices} (H. Hollerith, 1860 - 1929)
+		\begin{itemize}
+			\item \textbf{Figure 1.22, page 1-15}
+			\item control mechanism activated by electrical devices (relays, motors ... ) with punched cards
+			\item American Census in 1890: shorten the time for analysis 7 yrs $\rightarrow$ 1 yrs
+			\item founded IBM
+		\end{itemize}
+\end{itemize}
+
+\subsubsection*{Computer era}
+
+\begin{itemize}
+	\item Theoretical background of the first programmable electrical calculation machine (The first computer): \textbf{L. Couffignal and A. M. Turing}
+	\item The first computer: \textbf{ZUSE Z3} by K. Zuse (1941)
+		\begin{itemize}
+			\item Z1 (didn't work) $\rightarrow$ Z2 (simple tests) $\rightarrow$ Z3 
+			\item could handle 64 numbers with 22 digits. 
+			\item 2600 relays and 8 line punched tape
+			\item Z4 (1950s) worked at ETH 
+		\end{itemize}	
+	\item \textbf{The first encryptor \& decryptor}: Enigma vs Colossus (1941)
+		\begin{itemize}
+			\item MARK 1 (1943) in US
+			\item MARK 2 (1944) in US
+		\end{itemize} 
+	\item \textbf{The first electronical computer, ENIAC (1946)} \textbf{Figure 1.25, page 1-16}
+		\begin{itemize}
+			\item J. P. Eckert, J. Mauchley and H. H. Goldstine
+			\item 18000 tubes, 1500 relays, 1000 capacitors and 6000 switch.
+			\item very fast... 0.0002 sec for addition, 0.0028 sec for multiplication 
+		\end{itemize}
+	\item \textbf{Transistor} invented (1948) \textbf{Figure 1.26, page 1-17}
+		\begin{itemize}
+			\item \textbf{smaller, faster, less heat, longer life cycle, manufactured automatically}
+			\item \textbf{switch: relays $\rightarrow$ tubes $\rightarrow$ transistor}
+		\end{itemize}   
+	\item \textbf{single chip computer(CPU)} (Integrated Circuits) 
+		\begin{itemize}
+			\item 4-bit processor INTEL and Texas Instrument in 1970
+			\item 8-bit (1972), 16-bit (1978) ... now 32 bit / 64 bit
+		\end{itemize}
+	\item \textbf{Personal Computer (PC)}
+		\begin{itemize}
+			\item because of IC, the size of computers could be drastically reduced
+			\item Kenbak1 (1971): the first single chip computer
+			\item ALTAIR 880 (1974): mass market
+				\begin{itemize}
+					\item \textbf{Basic}: a new programming language developed for ALTAIR
+				\end{itemize}
+			\item Apple II \& Commodore PET: the first commercial success
+			\item IBM PC became very popular
+		\end{itemize}
+	\item SGI were used for high-performance computer graphics: Virtual Reality...
+\end{itemize}
+
+\subsubsection*{Moore's law and the development of computer}
+
+\begin{itemize}
+	\item \textbf{Moore's law} (1965): \textbf{the amount of transistors} in a computer is doubled all 18 months. \textbf{Figure 1.34, page 1-22}
+	\item but also the required space for the transistors becomes smaller and smaller. i.e. \textbf{the available memory per chip} is increases: x4 every 3 yrs
+	\item \textbf{chip size} also increases: x2 every 10 yrs 
+	\item \textbf{CPU speed} increases: x2 every year
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\linewidth]{1_34}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\linewidth]{1_35}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\linewidth]{1_36}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\linewidth]{1_37}
+	\end{subfigure}
+\end{figure}
+
+\subsection{Definitions}
+
+\begin{itemize}
+	\item Reality (exist): real object $\gg$ virtual object
+	\item Mixed Reality 
+		\begin{itemize}
+			\item Extended Reality (Augmented Reality): real obj $>$ virtual obj
+			\item Extended Virtuality (Augmented Virtuality): real obj $<$ virtual obj
+		\end{itemize}
+	\item Virtual Reality (non exist): real obj $\ll$ virtual obj
+	\item \textbf{Note: Figure 1.39, page 1-25}
+\end{itemize}
+
+\begin{figure}[h]
+	\includegraphics[width=\linewidth]{1_39}
+\end{figure}
+
+\subsubsection{Extended Reality (augmented reality)}
+
+\begin{itemize}
+	\item \textbf{real object $>$ virtual object}
+	\item the computer generated objects are characterized by the fact but usually differ from reality in scale, shape or color.
+	\item e.g. AR on copy machine: indicate parts to be fixed  
+\end{itemize}
+
+\subsubsection{Extended Virtuality (autmented virtuality)}
+
+\begin{itemize}
+	\item \textbf{real object $<$ virtual object}
+	\item comparing to AR, virtual objects are much more detailed and fit much better to reality.
+	\item e.g. Reconstruction of ruins \textbf{Figure 1.40}
+\end{itemize}
+
+\subsubsection{Virtual Reality}
+
+\subsubsection*{Definition}
+
+\begin{itemize}
+	\item Former Definition: a possible or considered reality, \underline{which is not available yet.}
+	\item Complete Definition: \textbf{``Virtual Reality is a computer generated, interactive and three-dimensional environment, in which the user is completely immersed"}
+		\begin{enumerate}
+			\item a fictive and non-real world (e.g. TV, movie, dream are fictive and non-real world)
+			\item ``cybernetic room" or ``cyberspace": controllable and manageable room, in which information is processed. (e.g. chess, board games)
+			\item generated by computer, using specialized program: imaginary reality can only be reached by processing numerous infos. 
+		\end{enumerate}
+\end{itemize}
+
+\subsubsection*{The VR reference model}
+
+\begin{itemize}
+	\item \textbf{Figure 1.41, page 1-27}
+	\item Three component (three axis)
+		\begin{itemize} 
+			\item interaction (none $\rightarrow$ interactive $\rightarrow$ immersive)
+			\item semantics of data (none $\rightarrow$ static $\rightarrow$ dynamic)
+			\item presentation (single event $\rightarrow$ sequence of events $\rightarrow$ real time)
+		\end{itemize}
+	\item optimal VR application $=$ \underline{immersive interaction} $+$ \underline{dynamic semantics} $+$ \underline{real time presentation} 
+	\item Note, but not each VR application requires the maximum amount of all three criteria.
+\end{itemize}
+
+\begin{figure}[h]
+	\includegraphics[width=\linewidth]{1_41}
+\end{figure}
+
+\subsubsection*{I$^3$ - Immersion - Interaction - Imagination}
+
+\begin{itemize}
+	\item technology provided by VR ...
+		\begin{itemize}
+			\item is used to immerse into the virtual env. (immersion)
+			\item is used to interact with its objects. (interaction)
+			\\ $\rightarrow$ VR addresses all perception channels of the user and thus he is convinced of the reality of VR env. (imagination)
+		\end{itemize}
+	\item i.e. Two prerequisites for VR: immersion \& interaction (\textbf{immersion \& interaction} $\rightarrow$ imagination)
+	\item Interaction: 
+		\begin{itemize}
+			\item \textbf{interplay of information, action and reaction.}
+			\item describes the effect of computer generated models onto the \textbf{human perception channels.} 
+			\item continuous: continuous interaction with the virtual environment \textbf{(low delay)}
+			\item reaction: every movement of the user causes a reaction in VR (note: difference with movies)
+			\item generation / modification of geometry displayed, visual, acoustic, haptic, olfactory, and physical properties (e.g. collision, material prop., torque, DOF ...)of virtual object (copy or supplement real object)
+			\item interactivity: ability of the system to allow a user's interaction, while the application is running.
+		\end{itemize}
+	\item Immersion:
+		\begin{itemize}
+			\item 
+		\end{itemize} 
+\end{itemize}
+ 
+
 
 
 \section{Chapter 2}
