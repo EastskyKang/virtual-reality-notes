@@ -1,2 +1,16 @@
-.texpadtmp/*
+# ignore generated pdf file
 *.pdf
+
+# ignore core latex auxiliary files
+*.log
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
