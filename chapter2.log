@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.3.2)  7 JUN 2017 14:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.3.2)  7 JUN 2017 14:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -54,8 +54,7 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 \sa@box=\box26
-)
-No file chapter2.aux.
+) (./chapter2.aux)
 \openout1 = `chapter2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
@@ -70,6 +69,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
+
 
 ! LaTeX Error: Something's wrong--perhaps a missing \item.
 
@@ -116,22 +116,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 7.
 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.15 \end{itemize}
-                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 ! Too many }'s.
 \endsa@boxit ...dvarwidth \color@endgroup \egroup 
                                                   
-l.28 \end{document}
+l.36 \end{document}
                    
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
@@ -140,19 +128,19 @@ Such booboos are generally harmless, so keep going.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./chapter2.aux) ) 
 Here is how much of TeX's memory you used:
- 695 strings out of 493304
- 10796 string characters out of 6139872
- 63014 words of memory out of 5000000
- 4210 multiletter control sequences out of 15000+600000
+ 698 strings out of 493304
+ 10846 string characters out of 6139872
+ 64014 words of memory out of 5000000
+ 4211 multiletter control sequences out of 15000+600000
  5158 words of font info for 19 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 34i,4n,56p,263b,171s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,4n,56p,263b,216s stack positions out of 5000i,500n,10000p,200000b,80000s
 </us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on chapter2.pdf (2 pages, 52742 bytes).
+Output written on chapter2.pdf (2 pages, 53388 bytes).
 PDF statistics:
  27 PDF objects out of 1000 (max. 8388607)
  18 compressed objects within 1 object stream
