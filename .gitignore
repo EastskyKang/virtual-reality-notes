@@ -14,3 +14,6 @@
 *.fot
 *.cb
 *.cb2
+
+# ignore system files
+.DS_Store
