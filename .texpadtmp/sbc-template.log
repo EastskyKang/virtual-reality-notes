@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  8 JUN 2017 16:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 JUN 2017 15:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1245,29 +1245,42 @@ File: Figures/1_49.png Graphic file (type png)
  <use Figures/1_49.png>
 Package pdftex.def Info: Figures/1_49.png used on input line 369.
 (pdftex.def)             Requested size: 128.0387pt x 70.4813pt.
- [8 <./Figures/1_45.png> <./Figures/1_47.png> <./Figures/1_48.png> <./Figures/1_49.png>] <Figures/1_59.png, id=62, 721.69624pt x 375.4025pt>
+ [8 <./Figures/1_45.png> <./Figures/1_47.png> <./Figures/1_48.png> <./Figures/1_49.png>] <Figures/1_55.png, id=62, 729.72626pt x 414.54875pt>
+File: Figures/1_55.png Graphic file (type png)
+ <use Figures/1_55.png>
+Package pdftex.def Info: Figures/1_55.png used on input line 411.
+(pdftex.def)             Requested size: 192.0548pt x 109.10216pt.
+ <Figures/1_56.png, id=63, 736.7525pt x 591.20876pt>
+File: Figures/1_56.png Graphic file (type png)
+ <use Figures/1_56.png>
+Package pdftex.def Info: Figures/1_56.png used on input line 414.
+(pdftex.def)             Requested size: 192.0548pt x 154.10757pt.
+
+Underfull \vbox (badness 2726) has occurred while \output is active []
+
+ [9] <Figures/1_59.png, id=67, 721.69624pt x 375.4025pt>
 File: Figures/1_59.png Graphic file (type png)
  <use Figures/1_59.png>
-Package pdftex.def Info: Figures/1_59.png used on input line 403.
+Package pdftex.def Info: Figures/1_59.png used on input line 457.
 (pdftex.def)             Requested size: 426.79135pt x 222.00108pt.
-) [9 <./Figures/1_59.png>] (/Users/kangdongho/Development/virtual-reality-notes/.texpadtmp/sbc-template.aux) )
+ [10 <./Figures/1_55.png> <./Figures/1_56.png>]) [11 <./Figures/1_59.png>] (/Users/kangdongho/Development/virtual-reality-notes/.texpadtmp/sbc-template.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 18692 strings out of 493014
- 349983 string characters out of 6133351
+ 18698 strings out of 493014
+ 350119 string characters out of 6133351
  415931 words of memory out of 5000000
- 21959 multiletter control sequences out of 15000+600000
+ 21963 multiletter control sequences out of 15000+600000
  20968 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  51i,9n,72p,10386b,9657s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/kangdongho/Development/virtual-reality-notes/.texpadtmp/sbc-template.pdf (9 pages, 3848166 bytes).
+Output written on /Users/kangdongho/Development/virtual-reality-notes/.texpadtmp/sbc-template.pdf (11 pages, 4587335 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
