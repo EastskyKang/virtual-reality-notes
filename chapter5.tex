@@ -1,5 +1,157 @@
 \documentclass{standalone}
 % Load any packages needed for this document
 \begin{document}
-\section{Chapter 5}
+\section{Chapter 5 Hardware for VR}
+complete VR installation consists of three main parts:
+\begin{itemize}
+\item User field: consists of various persons and/or application fields
+\item Simulation field: consists of efficient computer(calculates presentation from the virtual environment) and also the feedback from the user
+\item Interaction field:interaction field consists of the human-computer interface, which is used for the analog-in and output of the VR data 
+\end{itemize}
+\subsection{Visual In- and Output Devices}
+\begin{itemize}
+\item eye is the most important perception channel
+\item Active Displays: generate the light for illumination(CRT, LED, VFD, plasma display)
+\item use ambient light or background illumination(LCD)
+\end{itemize}
+\subsubsection{Display Technologies}
+\subsubsection*{Cathod Ray Tube(CRT)}
+\begin{itemize}
+\item Developed by Ferdinand Braun at 1909
+\item For multiple colors, penetron tube and mask tube is used
+\begin{itemize}
+\item Penetron Tube: works in the same way as cathod ray tube but different floresence colors are stacked at thte inside of the tube. In order to activate different layers, the electrons must have different kinetic energies.
+\item Mask Tube: florescence colors are arranged in small triples or stripes(dots are visible if enlarged)
+\end{itemize}
+\item hole-mask or a slot-mask is used infront of the phosphoric layer which eliminates all unfocused electrons due to its positive charge
+\item limitation of resolution is not given by cathod ray-tube but by the image is digitally processed
+\begin{itemize}
+\item vector technology: pros(no discretization, small amount of memory transformation in hardware) cons(only polygons, no surfaces, only low complexity otherwise image flicker)
+\item grid technology: pros(surfaces can be displayed, simple and cheap, complex geometry possible) cons(visible steps, framebuffer needed, scan conversion needed) : ongoing technical development completely replaced by grid technology.
+\end{itemize}
+\end{itemize}
+\subsubsection*{LC Displays}
+\begin{itemize}
+\item LC: Liquid Crystal in fluid state behaves like a fluid but also show some crystalline properties at the same time.
+\item Three different states: nematic smectic, cholesteric
+\begin{itemize}
+\item Nematic: all molecules have the same orientation
+\item smectic state: all molecules have the same orientation but in addition arranged in layers that can be easily displaced againtst each other.
+\item cholesteric state: the crystals are arranged in thin layers which form a helix
+\end{itemize}
+\item LCDs have three different groups
+\begin{itemize}
+\item TN(Twisted Nematic): easiest and cheapest, LCD cells are turned by 90 deg
+\item STN(Super Twisted Nematic): twisted by 180 deg and 270 deg. results in a better contrast but results in coloring
+\item FIlmed Super Twisted Nematic): additional thin film layer to improve readability and contrast
+\end{itemize}
+\item Passive matrix technology vs active matrix technology
+\begin{itemize}
+\item Passive matrix:
+\item active matrix
+\end{itemize}
+\item color matrix lcds
+\end{itemize}
+
+\subsubsection*{Ferroelectric Liquid Crystal Displays(FLCD)}
+\begin{itemize}
+\item Liquid crystal displays made out of ferroelecric displays have a much higher switching frequency than nematic LCDs
+\item once they are set they remain on the same position
+\item based on Pockel Effect" with an applied voltage field changes refractive index and the crystal is said to be bifringent.(refraction depends on the polarity of the incoming light.
+\item To use for light modulation, the crystal is placed between a polarizer and a crossed(90 deg) analyzer.
+\end{itemize}
+\subsubsection*{LED-Screens}
+\begin{itemize}
+\item LEDs are a semiconductor with long hisory(used from 1960s)
+\item used for applications that dont need high resoultion
+\item Diode consist of two zones
+\begin{itemize}
+\item overplus electrons arises in one zone while there will be a lack of electrons in the other zone(so-called holes)
+\item when electrons from one zone fill up the holes from the other zone, additional energy is released emitting in the form of light
+\end{itemize}
+\end{itemize}
+\subsubsection*{Plasma Displays(PDP)}
+\begin{itemize}
+\item A plasma screen is a self-emissive device: using electrodes, a gas in ionized which emits an electro-magnetic radiation.
+\item all electrodes can be addressed individually, every point of the matrix can be activated.
+\item the gas has a hystersis effect
+\item advantage
+\begin{itemize}
+\item small dimension in depth and the high light intensity
+\item high brilliance in color
+\item brightness and contrast
+\item robust and insensitive to magnetic fields
+\item can be used in large flat screens
+\end{itemize} 
+\end{itemize}
+\subsubsection*{OLED Techonology}
+\begin{itemize}
+\item OLED is a promising
+\begin{itemize}
+\item TOLED(Transparent Organic Light Emitting Diode)
+\item SOLED(Stacked Organic Light Emitting Diode)
+\item FOLED(Flexible Oranic Light Emitting Diode)
+\end{itemize}
+\item OLEDs age if they are not switched on
+\end{itemize}
+\subsubsection*{Field Emission Display}
+\begin{itemize}
+\item similar working principle with CRTs but electrons are emitted from thokusands of small metallic micro tips: one micro tip per pixel
+\end{itemize}
+\subsubsection*{Electronic Paper}
+\begin{itemize}
+\item a layer is small capsules with 100 um in diameter between two electrodes. pigments have a positive or a negative charge. Depending on the applied voltage of electrodes the white or black pigments move to the surface of the capsule and generate a black or a white pixel. 
+\end{itemize}
+\subsubsection*{Comparison between the Different Technologies}
+look up image
+\subsubsection{Projectors}
+\subsubsection*{Tube Projectors(CRT Projectors)}
+\begin{itemize}
+\item uses a cathode ray tube for every basic color (red, green, blue)
+\item images are added on the screen using additive color model
+\item extensive adjusting procedures are necessary
+\item image distortion: Horizontal distortion / Vertical Distortion
+\end{itemize}
+\subsubsection*{DLP Projectors}
+\begin{itemize}
+\item Digital Mirror Device(DMD) is the main part in a DLP Projector, which is an array of adjustable small mirrors that can be addressed by pulse-width-modulation in a digital way (one mirror for every pixel)
+\item DMD can switch on and off the incoming light
+\item greyscales are realized by a binary pulse-width modulation of the incoming light
+\item available DLP projectors can be distinguished into 1, 2, or 3 chip projectors
+\item 1 chip DLP
+\begin{itemize}
+\item white light is dispersed into red, green and blue using a rotating wheel with color filters
+\item usually a white segment is used to assist in boosting lumens projected onto the screen
+\item additional draw back is that the amount of light per color is only one third
+\item alternative: SCR DLP(Scrolling Color Recapture or Sequential Color Recapture)
+\begin{itemize}
+\item made out of a material with dichroitic properties and reflects the amount of light that cannot pass through into the light integrator
+\item Tis light integrator is used to bundle the light
+\item in order to provide all basic colors on the chip simultaneously and within the light integrator as well, the colors of the color wheel are arranged in a so-called archimedes shape
+\end{itemize}
+\end{itemize}
+\item 2 chip DLP
+\begin{itemize}
+\item A color wheel disperes the incoming light into yellow and magenta which are given to a color-seperating prism afterwards
+\item The color prism seperates magenta into red and blue, while yellow will be dispersed into red and green
+\item Since red is a relevant part after each dispersion, it is not time-multiplexed and thus needs a seperate DMD
+\item Green and blue ar time-multiplexed and thus can share another DMD that is synchronized with the colorwheel
+\end{itemize}
+\item 3 chip DLP
+\begin{itemize}
+\item A prism disperses the white light into the colors red, green, and blue which are reflected individually by the DMD-chips
+\item Expensive, thus used in professional installations
+\end{itemize}
+\item optical efficiency of the DLP projection system $$ Lamp \times colorfilter \times pixel = total$$
+\end{itemize}
+\subsubsection*{LC Projectors}
+\begin{itemize}
+\item LC projectors can be subdivided into single and triple chip projectors
+\item In a LC projector, the image is generated on three LC panels for red, green and blue
+\end{itemize}
+\subsubsection*{LED Projectors}
+\begin{itemize}
+\item like a normal DLP, but light source is LED
+\end{itemize}
+\subsubsection{Stereo Display Technologies}
 \end{document}
