@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 JUN 2017 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 JUN 2017 15:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1148,4 +1148,238 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c__siunitx_mathsf_int=\count177
 LaTeX Font Info:    Try loading font information for U+msa on input line 57.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfon
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 57.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+\c__siunitx_mathtt_int=\count178
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 59.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 59.
+ (./chapter1.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+ [1
+
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] <Figures/1_34.png, id=15, 813.0375pt x 426.59375pt>
+File: Figures/1_34.png Graphic file (type png)
+ <use Figures/1_34.png>
+Package pdftex.def Info: Figures/1_34.png used on input line 168.
+(pdftex.def)             Requested size: 192.0548pt x 100.76376pt.
+ <Figures/1_35.png, id=17, 753.81625pt x 549.05125pt>
+File: Figures/1_35.png Graphic file (type png)
+ <use Figures/1_35.png>
+Package pdftex.def Info: Figures/1_35.png used on input line 171.
+(pdftex.def)             Requested size: 192.0548pt x 139.88474pt.
+ <Figures/1_36.png, id=18, 577.15625pt x 340.27126pt>
+File: Figures/1_36.png Graphic file (type png)
+ <use Figures/1_36.png>
+Package pdftex.def Info: Figures/1_36.png used on input line 174.
+(pdftex.def)             Requested size: 192.0548pt x 113.22963pt.
+ <Figures/1_37.png, id=19, 624.3325pt x 441.65pt>
+File: Figures/1_37.png Graphic file (type png)
+ <use Figures/1_37.png>
+Package pdftex.def Info: Figures/1_37.png used on input line 177.
+(pdftex.def)             Requested size: 192.0548pt x 135.8588pt.
+ <Figures/1_39.png, id=20, 856.19875pt x 541.02126pt>
+File: Figures/1_39.png Graphic file (type png)
+ <use Figures/1_39.png>
+Package pdftex.def Info: Figures/1_39.png used on input line 195.
+(pdftex.def)             Requested size: 426.79135pt x 269.68443pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./Figures/1_34.png> <./Figures/1_35.png> <./Figures/1_36.png> <./Figures/1_37.png>] [4 <./Figures/1_39.png>]
+Underfull \hbox (badness 3058) in paragraph at lines 238--239
+[]\OT1/ptm/m/n/12 optimal VR ap-pli-ca-tion $\OT1/cmr/m/n/12 =$ $[]$ $+$ $[]$ $+$
+ []
+
+<Figures/1_41.png, id=33, 760.8425pt x 437.635pt>
+File: Figures/1_41.png Graphic file (type png)
+ <use Figures/1_41.png>
+Package pdftex.def Info: Figures/1_41.png used on input line 243.
+(pdftex.def)             Requested size: 426.79135pt x 245.49463pt.
+ <Figures/1_42.png, id=34, 668.4975pt x 484.81125pt>
+File: Figures/1_42.png Graphic file (type png)
+ <use Figures/1_42.png>
+Package pdftex.def Info: Figures/1_42.png used on input line 262.
+(pdftex.def)             Requested size: 192.0548pt x 139.28227pt.
+ <Figures/1_43.png, id=35, 525.965pt x 378.41376pt>
+File: Figures/1_43.png Graphic file (type png)
+ <use Figures/1_43.png>
+Package pdftex.def Info: Figures/1_43.png used on input line 265.
+(pdftex.def)             Requested size: 192.0548pt x 138.17471pt.
+ [5 <./Figures/1_41.png>] [6 <./Figures/1_42.png> <./Figures/1_43.png>] <Figures/1_44.png, id=45, 718.685pt x 382.42876pt>
+File: Figures/1_44.png Graphic file (type png)
+ <use Figures/1_44.png>
+Package pdftex.def Info: Figures/1_44.png used on input line 322.
+(pdftex.def)             Requested size: 426.79135pt x 227.11319pt.
+ [7 <./Figures/1_44.png>] <Figures/1_45.png, id=51, 752.8125pt x 406.51875pt>
+File: Figures/1_45.png Graphic file (type png)
+ <use Figures/1_45.png>
+Package pdftex.def Info: Figures/1_45.png used on input line 334.
+(pdftex.def)             Requested size: 426.79135pt x 230.47128pt.
+ <Figures/1_47.png, id=52, 665.48625pt x 299.1175pt>
+File: Figures/1_47.png Graphic file (type png)
+ <use Figures/1_47.png>
+Package pdftex.def Info: Figures/1_47.png used on input line 363.
+(pdftex.def)             Requested size: 128.0387pt x 57.54948pt.
+ <Figures/1_48.png, id=53, 741.77126pt x 388.45125pt>
+File: Figures/1_48.png Graphic file (type png)
+ <use Figures/1_48.png>
+Package pdftex.def Info: Figures/1_48.png used on input line 366.
+(pdftex.def)             Requested size: 128.0387pt x 67.0494pt.
+ <Figures/1_49.png, id=54, 705.63625pt x 388.45125pt>
+File: Figures/1_49.png Graphic file (type png)
+ <use Figures/1_49.png>
+Package pdftex.def Info: Figures/1_49.png used on input line 369.
+(pdftex.def)             Requested size: 128.0387pt x 70.4813pt.
+ [8 <./Figures/1_45.png> <./Figures/1_47.png> <./Figures/1_48.png> <./Figures/1_49.png>] <Figures/1_55.png, id=62, 729.72626pt x 414.54875pt>
+File: Figures/1_55.png Graphic file (type png)
+ <use Figures/1_55.png>
+Package pdftex.def Info: Figures/1_55.png used on input line 411.
+(pdftex.def)             Requested size: 192.0548pt x 109.10216pt.
+ <Figures/1_56.png, id=63, 736.7525pt x 591.20876pt>
+File: Figures/1_56.png Graphic file (type png)
+ <use Figures/1_56.png>
+Package pdftex.def Info: Figures/1_56.png used on input line 414.
+(pdftex.def)             Requested size: 192.0548pt x 154.10757pt.
+
+Underfull \vbox (badness 2726) has occurred while \output is active []
+
+ [9] <Figures/1_59.png, id=67, 721.69624pt x 375.4025pt>
+File: Figures/1_59.png Graphic file (type png)
+ <use Figures/1_59.png>
+Package pdftex.def Info: Figures/1_59.png used on input line 457.
+(pdftex.def)             Requested size: 426.79135pt x 222.00108pt.
+ [10 <./Figures/1_55.png> <./Figures/1_56.png>]) (./chapter2.tex [11 <./Figures/1_59.png>] [12]) (./chapter3.tex <Figures/3_1.png, id=80, 473.51906pt x 219.82124pt>
+File: Figures/3_1.png Graphic file (type png)
+ <use Figures/3_1.png>
+Package pdftex.def Info: Figures/3_1.png used on input line 32.
+(pdftex.def)             Requested size: 284.11362pt x 131.89375pt.
+
+Underfull \vbox (badness 1102) has occurred while \output is active []
+
+ [13] [14 <./Figures/3_1.png>] <Figures/3_8.png, id=89, 572.89032pt x 61.73062pt>
+File: Figures/3_8.png Graphic file (type png)
+ <use Figures/3_8.png>
+Package pdftex.def Info: Figures/3_8.png used on input line 95.
+(pdftex.def)             Requested size: 401.0205pt x 43.21112pt.
+
+Overfull \hbox (10.36426pt too wide) in paragraph at lines 95--96
+[][] 
+ []
+
+[15 <./Figures/3_8.png>] [16] [17] [18] <Figures/3_24.png, id=103, 503.63156pt x 315.42844pt>
+File: Figures/3_24.png Graphic file (type png)
+ <use Figures/3_24.png>
+Package pdftex.def Info: Figures/3_24.png used on input line 256.
+(pdftex.def)             Requested size: 251.81516pt x 157.71382pt.
+ <Figures/3_25.png, id=104, 685.8122pt x 351.56343pt>
+File: Figures/3_25.png Graphic file (type png)
+ <use Figures/3_25.png>
+Package pdftex.def Info: Figures/3_25.png used on input line 263.
+(pdftex.def)             Requested size: 411.4905pt x 210.93968pt.
+
+Overfull \hbox (20.83426pt too wide) in paragraph at lines 263--264
+[][] 
+ []
+
+[19 <./Figures/3_24.png> <./Figures/3_25.png>] <Figures/3_26.png, id=111, 369.63094pt x 261.97874pt>
+File: Figures/3_26.png Graphic file (type png)
+ <use Figures/3_26.png>
+Package pdftex.def Info: Figures/3_26.png used on input line 272.
+(pdftex.def)             Requested size: 184.815pt x 130.98904pt.
+ <Figures/3_29.png, id=112, 150.5625pt x 173.14688pt>
+File: Figures/3_29.png Graphic file (type png)
+ <use Figures/3_29.png>
+Package pdftex.def Info: Figures/3_29.png used on input line 296.
+(pdftex.def)             Requested size: 112.92159pt x 129.85983pt.
+ <Figures/3_30.png, id=113, 329.73187pt x 204.01219pt>
+File: Figures/3_30.png Graphic file (type png)
+ <use Figures/3_30.png>
+Package pdftex.def Info: Figures/3_30.png used on input line 296.
+(pdftex.def)             Requested size: 247.29828pt x 153.00876pt.
+
+Underfull \vbox (badness 5817) has occurred while \output is active []
+
+ [20 <./Figures/3_26.png>] <Figures/3_31.png, id=118, 532.99126pt x 377.91188pt>
+File: Figures/3_31.png Graphic file (type png)
+ <use Figures/3_31.png>
+Package pdftex.def Info: Figures/3_31.png used on input line 316.
+(pdftex.def)             Requested size: 346.44022pt x 245.6398pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21 <./Figures/3_29.png> <./Figures/3_30.png>] <Figures/3_32.png, id=126, 306.39468pt x 225.84375pt>
+File: Figures/3_32.png Graphic file (type png)
+ <use Figures/3_32.png>
+Package pdftex.def Info: Figures/3_32.png used on input line 321.
+(pdftex.def)             Requested size: 245.11607pt x 180.67523pt.
+ [22 <./Figures/3_31.png> <./Figures/3_32.png>] <Figures/3_56.png, id=132, 552.56438pt x 514.17094pt>
+File: Figures/3_56.png Graphic file (type png)
+ <use Figures/3_56.png>
+Package pdftex.def Info: Figures/3_56.png used on input line 343.
+(pdftex.def)             Requested size: 386.79242pt x 359.9172pt.
+ [23 <./Figures/3_56.png>] <Figures/3_62.png, id=137, 433.62pt x 341.02406pt>
+File: Figures/3_62.png Graphic file (type png)
+ <use Figures/3_62.png>
+Package pdftex.def Info: Figures/3_62.png used on input line 361.
+(pdftex.def)             Requested size: 346.89647pt x 272.81961pt.
+ [24 <./Figures/3_62.png>] <Figures/3_64.png, id=142, 312.41719pt x 311.66437pt>
+File: Figures/3_64.png Graphic file (type png)
+ <use Figures/3_64.png>
+Package pdftex.def Info: Figures/3_64.png used on input line 391.
+(pdftex.def)             Requested size: 218.69052pt x 218.16356pt.
+ <Figures/3_66.png, id=143, 429.85594pt x 335.75438pt>
+File: Figures/3_66.png Graphic file (type png)
+ <use Figures/3_66.png>
+Package pdftex.def Info: Figures/3_66.png used on input line 406.
+(pdftex.def)             Requested size: 171.93933pt x 134.29936pt.
+ [25 <./Figures/3_64.png>] <Figures/3_69.png, id=149, 788.19469pt x 231.86626pt>
+File: Figures/3_69.png Graphic file (type png)
+ <use Figures/3_69.png>
+Package pdftex.def Info: Figures/3_69.png used on input line 439.
+(pdftex.def)             Requested size: 394.09637pt x 115.93283pt.
+
+Overfull \hbox (3.44014pt too wide) in paragraph at lines 439--440
+[][] 
+ []
+
+[26 <./Figures/3_66.png>] <Figures/3_71.png, id=154, 256.70906pt x 177.66376pt>
+File: Figures/3_71.png Graphic file (type png)
+ <use Figures/3_71.png>
+Package pdftex.def Info: Figures/3_71.png used on input line 447.
+(pdftex.def)             Requested size: 128.3542pt x 88.83165pt.
+ [27 <./Figures/3_69.png> <./Figures/3_71.png>]) (./chapter5.tex) [28] (/Users/kangdongho/Development/virtual-reality-notes/.texpadtmp/sbc-template.aux) )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 1061 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 18784 strings out of 493014
+ 351590 string characters out of 6133351
+ 415931 words of memory out of 5000000
+ 22024 multiletter control sequences out of 15000+600000
+ 22046 words of font info for 55 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 51i,9n,72p,10386b,9657s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/kangdongho/Development/virtual-reality-notes/.texpadtmp/sbc-template.pdf (28 pages, 6587375 bytes).
+PDF statistics:
+ 194 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+
