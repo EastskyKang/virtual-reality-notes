@@ -625,6 +625,7 @@ Figure 3.95
 \begin{itemize}
 	\item calculates light intensity of a point on the surface of an object independently. 
 	\item fast but many compromises
+	\item can be implemented by hardware
 	\item light transport:
 		\begin{itemize}
 			\item ambient light. no direction, uniformly distributed. 
@@ -702,7 +703,188 @@ Figure 3.95
 \end{figure}
 
 
+\subsubsection*{Approximation and Shading methods}
+
+\begin{itemize}
+	\item calculating illumination model only for the edges of the triangle, and all points in between are only interpolated. $\rightarrow$ saving time, good approximation to the local illumination model.
+	\item flat shading (constant shading): if no apprx. is made between the corners of the triangle.
+	\item alternatives: two methods for interpolation - Gouraud and the Phong interpolation 
+\end{itemize}
+
+\subsubsection*{Flat Shading}
+
+\begin{itemize}
+	\item Figure 3.106
+	\item no apprx.
+	\item illumination model used for one point of the polygon and all points of the polygon are assigned to the calculated color. 
+	\item works well when...
+		\begin{itemize}
+			\item the light source is infinitely far away ($\theta = \text{const.}$)
+			\item the viewer is infinitely far away ($\alpha = \text{const.}$)
+			\item polygon represents the true surface of the object and not an approximation of a curved surface (no curved surface)
+		\end{itemize}
+	\item very fast but not realistic especially for ball.
+	\item Mach-effect: two neighboring polygons with different shadings also have different intensities along their common edges. (problem!)
+		\begin{itemize}
+			\item Figure 3.107
+			\item reason why the curved surfaces are not realistic in flat shading
+		\end{itemize}
+\end{itemize}
 
 
+\subsubsection*{Gouraud shading}
+
+\begin{itemize}
+	\item color and intensity interpolation (apprx.)
+	\item does not shade every polygon but treats it as part of a larger surface. (vertices)
+	\begin{enumerate}
+		\item vertex perpendicular is calculated for every vertex of the polygon grid.
+			\begin{equation}
+				N_V = \frac{\sum_{i=1}^n N_i}{\abs{n \sum_{i=1} N_i}}
+			\end{equation}
+		\item illumination model is applied to the vertices 
+		\item intensity for the other points of the surface to be shaded by an interpolation of the other vertices.
+			\begin{itemize}
+				\item intensity for the points on the edges is calculated first by interpolating between the vertices. 
+				\item inner area of the polygon can be shaded by interpolating between the intensities of the edges. (scan-line procedure: Figure 3.109)
+				
+				\begin{align}
+					I_a &= I_1 - (I_1 - I_2) \frac{y_1 - y_s}{y_1 - y_2} \\
+					I_b &= I_1 - (I_1 - I_3) \frac{y_1 - y_s}{y_1 - y_3} \\
+					I_p &= I_b - (I_b - I_a) \frac{x_b - x_p}{x_b - x_a}
+				\end{align}
+				
+			\end{itemize}
+	\end{enumerate}
+	\item drawbacks: shiny reflections could get lost due to the interpolation $\rightarrow$ Phong shading
+\end{itemize}
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\linewidth]{3_109}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\linewidth]{3_112}
+	\end{subfigure}
+\end{figure}
+
+\subsubsection*{Phong shading}
+
+\begin{itemize}
+	\item interpolation, but perpendiculars of the surfaces are interpolated instead of the intensities.
+	\item very realistic but computationally expensive.
+		\begin{enumerate}
+			\item vertex perpendiculars of the polygon grid are calculated by using the mean value of the perpendiculars of the neighboring surfaces. 
+			\item the perpendiculars is calculated by interpolation for every pixel of the surface to be shaded. (sperpendiculars of the pixels on the edges are interpolated from the vertex perpendiculars)
+			\item perpendiculars of the inner polygon pixels are calcualted by a scan-line procedure.
+			\item normalize and local illumination procedure is applied for every perpendicular. 
+		\end{enumerate}
+\end{itemize}
+
+\subsubsection*{Interpolation methods}
+
+\begin{itemize}
+	\item Phong is time-consuming (more calculation)
+	\item Phong is more realistic (more precise illumination)
+	\item if the light hits the inner area without illuminating the corner, Gouraud does not work properly (all dark polygon)
+	\item For both methods, the silhouette of the polygon is not very smooth. $\rightarrow$ subdividing the polygon into much smaller polygons. (but computation $\uparrow$)
+	\item result of shading algorithms with interpolation depend on the orientation of the polygon. (Figure 3.114)
+	\item if two neighboring polygons do not have any vertex on a common edge then it's problematic. (Figure 3.115)
+	\item the geometry of the surfaces sometimes, is not represented very well by the vertex perpendiculars. In this case, light from very far distance will cause no change in shading. (Figure 3.116)
+\end{itemize}
+
+
+\subsubsection{Global Illumination Models}
+
+\begin{itemize}
+	\item consider the complete scenery: the relationship among objects is considered.
+	\item very realistic(advantage) but dramatically higher computation time(drawback)
+	\item transmission (incl. diffraction) and the exact distribution of diffuse light are global model
+	\item cannot implemented in hardware (so many factors e.g. amount of light source, geometry complexity, medium...)
+	\item two solution:
+		\begin{itemize}
+			\item Raytracing: calculate reflection, transparencies, refraction (w/o scattering) and shadows. Diffuse reflection is not supported well.
+			\item Radiosity: only for diffuse reflection. (opague or diffuse radiator assumption)
+		\end{itemize}
+\end{itemize}
+
+\subsubsection{Raytracing}
+
+\begin{itemize}
+	\item trace a light beam on its way from the source to the eye. (when calculating, eye to source since only a few light reach the eye)
+	\item eye emits rays $\rightarrow$ if the ray strikes a surface it's reflected, changed in color, and partially absorbed. 
+	\item uses optical laws for ideal reflection and refraction. 
+	\item process stops under the conditions of:
+		\begin{itemize}
+			\item the ray strikes a light source
+			\item the transported energy of the light ray is too low
+			\item the ray leaves the scenery
+		\end{itemize}
+	\item shadow rays: towards the light source are calculated for the place, at which the initial ray hits upon the object. only if no solid object is between, the source illuminates the object directly.
+	\item ray is emitted for every pixel until it strikes an object. $\rightarrow$ ray hits upon an object, the local illumination model is applied $\rightarrow$ two new rays are created: ideally reflected and the ideally refracted. $\rightarrow$ recursively calculate...
+		\begin{enumerate}
+			\item define the closest intersection point of the ray from the eye to any object
+			\item calculate the ideally reflected ray
+			\item calculate the light intensity of the reflected ray
+			\item calculate the ideally refracted ray
+			\item calculate the light intensity of the refracted ray
+			\item calculate the shadow ray 
+			\item interpretation of the illumination model in the examined location
+		\end{enumerate}
+	\item check Figure 3.120, 3.121, 3.122, 3.123
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\includegraphics[width=\linewidth]{3_120}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\textwidth}
+		\includegraphics[width=\linewidth]{3_121}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\textwidth}
+		\includegraphics[width=\linewidth]{3_122}
+	\end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{3_123}
+\end{figure}
+
+
+\setcounter{subsubsection}{4}
+\subsubsection{Radiosity}
+
+\begin{itemize}
+	\item how light (energy) is distributed in a virtual scenery?
+	\item assumption: energy stays constant in a closed room 
+		\begin{itemize}
+			\item energy radiated from a surface = radiation (or radiosity)
+			\item surface is assumed to be an opague, diffuse Lambert. 
+		\end{itemize}
+	\item radiosity equation: energy leaving is the sum of emiited and reflected light
+		\begin{equation}
+			B_i = E_i + \rho_i \sum_{i \leq j \leq n} B_j F_{j-1} \frac{A_j}{A_i}
+		\end{equation}
+		
+		where:
+		
+		\begin{itemize}
+			\item $B_i$, $B_j$ are the radiosities of the surface elements i and j, measured as energy per time unit and surface unit (W/m$^2$)
+			\item $E_i$ is the emission rate. $> 0$ for light sources, else $0$
+			\item $\rho_i$ is the reflection coefficient ($0 \leq \rho_i \leq 1$)
+			\item $F_{j-1}$ is a form factor or configuration factor: the amount of energy, which leaves the element j and arrives at the element i. (shape, orientation and hindrance of both elements)
+			\item $A_i$, $A_j$ are the areas of i and j
+			\item $N$ is the amount of surface elements in a scenery.
+		\end{itemize}
+	\item approximation of the form factors: semi-cubes or hemispheres are used. (Figure 3.128)
+	\item IMPORTANT read the page 3-108 to 3-115 carefully.
+\end{itemize}
+
+\subsection{Textures}
+
+\subsubsection{The Different Kinds of Textures}
+
+\subsubsection{The Mapping of Textures}
 
 \end{document}
