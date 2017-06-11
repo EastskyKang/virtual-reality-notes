@@ -883,8 +883,61 @@ Figure 3.95
 
 \subsection{Textures}
 
+\begin{itemize}
+	\item why texture? 
+		\begin{itemize}
+			\item creating realistic obj.
+			\item creating surface properties
+			\item visualize contours
+			\item distinguish between different parts of an obj.
+		\end{itemize}
+	\item complex object (e.g. golf ball) needs large amount of polygons $\rightarrow$ texture is an efficient alternative
+	\item how an image or a bitmap is applied to a polygon
+	\item two methods to create texture
+		\begin{itemize}
+			\item designing texture manually
+			\item mathematical methods
+		\end{itemize}
+\end{itemize}
+
 \subsubsection{The Different Kinds of Textures}
 
+\begin{itemize}
+	\item classification 
+		\begin{itemize}
+			\item 2D vs 3D
+		\end{itemize}
+\end{itemize}
+
+\subsubsection*{Bump Mapping}
+
+\begin{itemize}
+	\item within a bump map, the amount is stored by which the normals are changed towards the perpendiculars of the surfaces. (2D geometry is preserved, but normal vectors are changed)
+	\item color, intensities are not changed
+	\item bump map: array of shift values. 
+	\item Bump-Mapping cannot be combined with interpolation illumination models: Phong, Raytracing (o) Gouraud (x) (After G., everything is changed into flat)
+\end{itemize}
+
+\subsubsection*{3D Texture}
+
+\begin{itemize}
+	\item AKA texture mapping: the textures on the surface of the object are a result of the several cuts in the 3D texture space.
+\end{itemize}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{3_153}
+\end{figure}
+
+
 \subsubsection{The Mapping of Textures}
+
+\begin{itemize}
+	\item terms:
+		\begin{itemize}
+			\item texture plane: 2D plane in which the texture is defined
+			\item object space: within 3D object space, the models are created that will be provided later with textures
+			\item image field: contains the 2D completely rendered scenery
+		\end{itemize}
+\end{itemize}
 
 \end{document}
