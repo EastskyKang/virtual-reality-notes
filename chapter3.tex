@@ -450,17 +450,441 @@
 \end{itemize}
 
 
-\newpage
-$$ \alpha \delta \Delta \delta \int_a^b f(x) \sum_{i=1}^n \text{exp}(-t) $$
+\setcounter{subsection}{9}
+\subsection{Calculation of Object's Visibility}
 
-\begin{equation}
-	f(x) = \text{exp}(-t)
-\end{equation}
+\begin{itemize}
+	\item \textbf{visibility problem}: correct selection of polygons for a 3D scene, which are visible from a given view point
+		\begin{itemize}
+			\item only a small amount of polygons are visible.
+			\item but viewpoint change rapidly $\rightarrow$ \textbf{real-time selection} is crucial
+			\item algorithms for the object space vs. algorithms for the image space
+				\begin{itemize}
+					\item object space: work on the level of the objects with the same accuracy the objects have.
+					\item image space: work on the level of the rasterized image with a resolution of one pixel
+				\end{itemize}
+		\end{itemize}
+	\item \textbf{Culling procedure}: calculate the invisible lines and surfaces of the objects in a scene.
+		\begin{itemize}
+			\item view frustrum culling: all objects outside the viewing cone will be removed
+			\item back face culling: the back faces of an object are removed
+			\item occlusion culling: all objects that are hidden by an other one, are removed
+		\end{itemize}
+\end{itemize}
 
-\begin{align}
-	A &= B \\
-	&= C
-\end{align}
+\subsubsection{View Frustrum Culling}
 
+\begin{itemize}
+	\item using a view cone: all objects inside frustrum have to be calculated. objects are on the border of the frustrum will only be partly calculated
+\end{itemize}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{3_87}
+\end{figure}
+
+
+\subsubsection{Back Face Culling}
+
+\begin{itemize}
+	\item surfaces of an object facing away from the user will be removed
+	\item z-component of the polygon's perpendicular has to be checked. (positive: faces away from the user - invisible)
+\end{itemize}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{3_88}
+\end{figure}
+
+
+\subsubsection{Occlusion Culling}
+
+\begin{itemize}
+	\item all objects which are completely hidden by other objects from a given viewpoints are removed
+	\item in principle, depth information is used for occlusion culling.
+\end{itemize}
+
+\subsubsection*{Priority Algorithms (painter algorithm)}
+
+\begin{itemize}
+	\item surfaces of an object are sorted concerning their depths, and displayed from the back to the front. (only elements on the top are visible)
+	\item every surface has to be checked. 
+\end{itemize}
+
+\subsubsection*{Ray Tracing Algorithms (Ray Casting)}
+
+\begin{itemize}
+	\item rays from the center of projection into the scene are traced. (for every pixel in the image plane)
+	\item intersection points of a ray with an object are calculated:
+		\begin{itemize}
+			\item tracing a ``light ray" in the backward direction from the center of projection to a pixel in the scene.
+			\item determining the pixel's color by looking up the color of the hidden object in the scene.
+			\item if a pixel does not have any intersection point, it will have the same color as the background.
+			\item in all other cases, the intersection point is calculated, which is closest to the image plane.
+		\end{itemize}
+	\item +) for properties such as transparency and reflection, the color value of a pixel could be calculated. (raytracers)
+\end{itemize}
+
+
+\subsubsection*{z-Buffer Algorithm}
+
+\begin{itemize}
+	\item z-value (depth) of the displayed point is also stored:
+		\begin{enumerate}
+			\item all value of the depth buffer is set to $(-) \infty$
+			\item for each surface of a polygon, depth info. of every point in the plane is calculated. At first, calculate for the corner points then arbitrary point in the middle of a polygon defined as follows:
+			
+			\begin{equation}
+				z = \frac{-D - Ax - By}{C}
+			\end{equation}
+			
+			\item if the depth of a calculated pixel is smaller than the value that is already stored, update to the newly calculated value.
+			\item iterate 2, 3 for every polygons
+		\end{enumerate}
+	\item benefits:
+		\begin{itemize}
+			\item the order of the sampled polygons is arbitrary.
+			\item the algorithm is independent of the complexity of the individual objects. 
+			\item it is possible to add objects into scenes that are already rendered.
+			\item the slow algorithm can be accelerated by implementing it into hardware
+		\end{itemize}
+	\item drawbacks:
+		\begin{itemize}
+			\item a large amount of memory is needed $\rightarrow$ solution: can be reduced by dividing the image into multiple rectangles and separately calculating. (parallel)
+			\item exact smoothing, reflection and transparency are not possible. (object per pixel can be stored) $\rightarrow$ solution: every pixel is divided into n x n sub-pixels and edge is calculated on the level of the sub-pixels. An average color is calculated from the sub-pixels. 
+			\item limited resolution. Object with a large extension in depth, sometimes the same value of z appears.
+		\end{itemize}
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\linewidth]{3_90}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\linewidth]{3_91}
+	\end{subfigure}
+\end{figure}
+
+\subsection{The Distance Dependent Resolution (Level of Detail)}
+
+\begin{itemize}
+	\item the object far from the user $\rightarrow$ no need to simulate details
+	\item the object covering the complete field of view $\rightarrow$ has to be displayed with more details
+\end{itemize}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{3_92}
+\end{figure}
+
+
+\subsection{Illumination Models}
+
+\begin{itemize}
+	\item photo-realistic quality $\rightarrow$ illumination model
+	\item physical properties of light (Figure 3.93)
+		\begin{itemize}
+			\item diffuse reflection: uniformly scattered into all directions. The intensity depends on the perpendicular of the surface and on the direction of the incoming light.
+			\item complete reflection: angle of incoming light = angle of reflected light. (color and the size of the reflection spot depends on the material)
+			\item transmission: coupled with refraction. Global illumination models capture transmission.
+		\end{itemize}
+	\item rendering of light and shadow is affects by			
+		\begin{itemize}
+			\item light source type
+			\item geometry, position of light source and camera
+			\item geometry of the light, curvature of the geometry
+			\item surface properties of the illuminated scenery (e.g. transparency, color, reflections)
+			\item medium that transports the light (e.g. air, fog)
+		\end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{3_93}
+\end{figure}
+
+\subsubsection*{Light sources}
+
+Figure 3.95
+
+\begin{itemize}
+	\item ambient light: background illumination. No defined light source and has no direction
+	\item distant light: parallel light into one direction. The intensity of the light does not decrease with the distance from the light source
+	\item spatial light: parallel light but decreases with the distance. (make smooth shadows)
+	\item point light: light into every direction. The intensity decreases with the distance from the light source. (e.g. a simple bulbs)
+	\item spotlight: cone-shaped light. The direction, position and dimension of the cone have to be defined.
+\end{itemize}
+
+\subsubsection*{Local vs. Global}
+
+\begin{itemize}
+	\item two different approaches for calculating the lighting of a scenary. 
+	\item local: behavior of one point of the surface depending on the incoming light
+	\item global: whole scenery together with the distribution of light
+\end{itemize}
+
+\subsubsection{Local Illumination Models}
+
+\begin{itemize}
+	\item calculates light intensity of a point on the surface of an object independently. 
+	\item fast but many compromises
+	\item can be implemented by hardware
+	\item light transport:
+		\begin{itemize}
+			\item ambient light. no direction, uniformly distributed. 
+			\item light which reaches the surface of an object and uniformly reflected (in all directions)
+			\item light with a defined direction. 
+		\end{itemize}
+	\item Note: See the figures in the lecture note.
+\end{itemize}
+
+\subsubsection*{Reflection with Ambient Light}
+
+\begin{itemize}
+	\item light doesn't have orientation and reflected uniformly from every surface
+	\item not sufficient for the visualization of object.
+	\item intensity:
+		\begin{equation}
+			I = I_a \cdot k_a
+		\end{equation}
+		
+		where $I_a$ is the intensity of the ambient light and $k_a$ is the ambient reflection factor ($0 < k_a < 1$)
+\end{itemize}
+
+\subsubsection*{Diffuse Surfaces}
+
+\begin{itemize}
+	\item by point light which emits light into all directions
+	\item reflection is regardless of the viewer's position
+	\item Lambert's reflection law:
+		
+		\begin{align}
+			I &= I_p \cdot k_d \cos{\theta} \\
+			&= 	I_p \cdot k_d (\vec{N} \bold{\cdot} \vec{L})
+		\end{align}
+		
+		where $\vec{N}$ is the normal vector of surface, the $\vec{L}$ points into the direction of the light source, $I_p$ is the intensity of the incoming light and $k_d$ is the diffuse reflection coefficient. ($0 < k_d < 1$)
+	\item pale surfaces can be visualized very realistically. However the surface properties of many objects are not suitable.
+\end{itemize}
+
+\subsubsection*{Specular Surfaces}
+
+\begin{itemize}
+	\item varnished or polished surfaces. (light center reflection - highlights)
+	\item depends on the geometry and the viewpoint of the user. (position of the user is important!)
+	
+	\begin{equation}
+		I = I_p \cdot k_s \cos^n{\alpha}
+	\end{equation}
+\end{itemize}
+
+\subsubsection*{Ambient + Diffuse + Specular}
+
+\begin{itemize}
+	\item sum all terms..
+	\begin{align}
+		I &= \text{ambient} + \text{diffuse} + \text{specular} \\ 
+		&= I_a \cdot k_a + I_p \cdot k_d \cos{\theta} + I_p \cdot k_s \cos^n \alpha \\
+		&= I_a \cdot k_a + f_{att} \cdot I_p \big(k_d \cdot \cos \theta + k_s \cdot \cos^n \alpha \big) \\
+		&= I_a \cdot k_a + f_{att} \cdot I_p \big(k_d \cdot (\vec{N} \bold{\cdot} \vec{L}) + k_s \cdot (\vec{R} \cdot \vec{V})^n \big)
+	\end{align}
+	
+	where the factor $k$ and the exponent $n$ (shininess) depend on the kind of surface and influence the shape of the highlight.
+	\item $\cos ^n \alpha$ heuristically approaches the scattering of the reflected light.
+	\item attenuation element $f_{att}$: represents the decrease of the light intensity with an increasing distance to the light source ($d_L$): 
+	
+	\begin{equation}
+		f_{att} = \frac{1}{d_L^2}
+	\end{equation}
+	
+	\item refer to Figure 3.101
+	\item note that the model is based on simplified assumptions for the physical properties of the surface. (other factors: microstructure of the surface, transparency of the material, wavelength of light...)
+\end{itemize}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{3_102}
+\end{figure}
+
+
+\subsubsection*{Approximation and Shading methods}
+
+\begin{itemize}
+	\item calculating illumination model only for the edges of the triangle, and all points in between are only interpolated. $\rightarrow$ saving time, good approximation to the local illumination model.
+	\item flat shading (constant shading): if no apprx. is made between the corners of the triangle.
+	\item alternatives: two methods for interpolation - Gouraud and the Phong interpolation 
+\end{itemize}
+
+\subsubsection*{Flat Shading}
+
+\begin{itemize}
+	\item Figure 3.106
+	\item no apprx.
+	\item illumination model used for one point of the polygon and all points of the polygon are assigned to the calculated color. 
+	\item works well when...
+		\begin{itemize}
+			\item the light source is infinitely far away ($\theta = \text{const.}$)
+			\item the viewer is infinitely far away ($\alpha = \text{const.}$)
+			\item polygon represents the true surface of the object and not an approximation of a curved surface (no curved surface)
+		\end{itemize}
+	\item very fast but not realistic especially for ball.
+	\item Mach-effect: two neighboring polygons with different shadings also have different intensities along their common edges. (problem!)
+		\begin{itemize}
+			\item Figure 3.107
+			\item reason why the curved surfaces are not realistic in flat shading
+		\end{itemize}
+\end{itemize}
+
+
+\subsubsection*{Gouraud shading}
+
+\begin{itemize}
+	\item color and intensity interpolation (apprx.)
+	\item does not shade every polygon but treats it as part of a larger surface. (vertices)
+	\begin{enumerate}
+		\item vertex perpendicular is calculated for every vertex of the polygon grid.
+			\begin{equation}
+				N_V = \frac{\sum_{i=1}^n N_i}{\abs{n \sum_{i=1} N_i}}
+			\end{equation}
+		\item illumination model is applied to the vertices 
+		\item intensity for the other points of the surface to be shaded by an interpolation of the other vertices.
+			\begin{itemize}
+				\item intensity for the points on the edges is calculated first by interpolating between the vertices. 
+				\item inner area of the polygon can be shaded by interpolating between the intensities of the edges. (scan-line procedure: Figure 3.109)
+				
+				\begin{align}
+					I_a &= I_1 - (I_1 - I_2) \frac{y_1 - y_s}{y_1 - y_2} \\
+					I_b &= I_1 - (I_1 - I_3) \frac{y_1 - y_s}{y_1 - y_3} \\
+					I_p &= I_b - (I_b - I_a) \frac{x_b - x_p}{x_b - x_a}
+				\end{align}
+				
+			\end{itemize}
+	\end{enumerate}
+	\item drawbacks: shiny reflections could get lost due to the interpolation $\rightarrow$ Phong shading
+\end{itemize}
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\linewidth]{3_109}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\linewidth]{3_112}
+	\end{subfigure}
+\end{figure}
+
+\subsubsection*{Phong shading}
+
+\begin{itemize}
+	\item interpolation, but perpendiculars of the surfaces are interpolated instead of the intensities.
+	\item very realistic but computationally expensive.
+		\begin{enumerate}
+			\item vertex perpendiculars of the polygon grid are calculated by using the mean value of the perpendiculars of the neighboring surfaces. 
+			\item the perpendiculars is calculated by interpolation for every pixel of the surface to be shaded. (sperpendiculars of the pixels on the edges are interpolated from the vertex perpendiculars)
+			\item perpendiculars of the inner polygon pixels are calcualted by a scan-line procedure.
+			\item normalize and local illumination procedure is applied for every perpendicular. 
+		\end{enumerate}
+\end{itemize}
+
+\subsubsection*{Interpolation methods}
+
+\begin{itemize}
+	\item Phong is time-consuming (more calculation)
+	\item Phong is more realistic (more precise illumination)
+	\item if the light hits the inner area without illuminating the corner, Gouraud does not work properly (all dark polygon)
+	\item For both methods, the silhouette of the polygon is not very smooth. $\rightarrow$ subdividing the polygon into much smaller polygons. (but computation $\uparrow$)
+	\item result of shading algorithms with interpolation depend on the orientation of the polygon. (Figure 3.114)
+	\item if two neighboring polygons do not have any vertex on a common edge then it's problematic. (Figure 3.115)
+	\item the geometry of the surfaces sometimes, is not represented very well by the vertex perpendiculars. In this case, light from very far distance will cause no change in shading. (Figure 3.116)
+\end{itemize}
+
+
+\subsubsection{Global Illumination Models}
+
+\begin{itemize}
+	\item consider the complete scenery: the relationship among objects is considered.
+	\item very realistic(advantage) but dramatically higher computation time(drawback)
+	\item transmission (incl. diffraction) and the exact distribution of diffuse light are global model
+	\item cannot implemented in hardware (so many factors e.g. amount of light source, geometry complexity, medium...)
+	\item two solution:
+		\begin{itemize}
+			\item Raytracing: calculate reflection, transparencies, refraction (w/o scattering) and shadows. Diffuse reflection is not supported well.
+			\item Radiosity: only for diffuse reflection. (opague or diffuse radiator assumption)
+		\end{itemize}
+\end{itemize}
+
+\subsubsection{Raytracing}
+
+\begin{itemize}
+	\item trace a light beam on its way from the source to the eye. (when calculating, eye to source since only a few light reach the eye)
+	\item eye emits rays $\rightarrow$ if the ray strikes a surface it's reflected, changed in color, and partially absorbed. 
+	\item uses optical laws for ideal reflection and refraction. 
+	\item process stops under the conditions of:
+		\begin{itemize}
+			\item the ray strikes a light source
+			\item the transported energy of the light ray is too low
+			\item the ray leaves the scenery
+		\end{itemize}
+	\item shadow rays: towards the light source are calculated for the place, at which the initial ray hits upon the object. only if no solid object is between, the source illuminates the object directly.
+	\item ray is emitted for every pixel until it strikes an object. $\rightarrow$ ray hits upon an object, the local illumination model is applied $\rightarrow$ two new rays are created: ideally reflected and the ideally refracted. $\rightarrow$ recursively calculate...
+		\begin{enumerate}
+			\item define the closest intersection point of the ray from the eye to any object
+			\item calculate the ideally reflected ray
+			\item calculate the light intensity of the reflected ray
+			\item calculate the ideally refracted ray
+			\item calculate the light intensity of the refracted ray
+			\item calculate the shadow ray 
+			\item interpretation of the illumination model in the examined location
+		\end{enumerate}
+	\item check Figure 3.120, 3.121, 3.122, 3.123
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\includegraphics[width=\linewidth]{3_120}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\textwidth}
+		\includegraphics[width=\linewidth]{3_121}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\textwidth}
+		\includegraphics[width=\linewidth]{3_122}
+	\end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{3_123}
+\end{figure}
+
+
+\setcounter{subsubsection}{4}
+\subsubsection{Radiosity}
+
+\begin{itemize}
+	\item how light (energy) is distributed in a virtual scenery?
+	\item assumption: energy stays constant in a closed room 
+		\begin{itemize}
+			\item energy radiated from a surface = radiation (or radiosity)
+			\item surface is assumed to be an opague, diffuse Lambert. 
+		\end{itemize}
+	\item radiosity equation: energy leaving is the sum of emiited and reflected light
+		\begin{equation}
+			B_i = E_i + \rho_i \sum_{i \leq j \leq n} B_j F_{j-1} \frac{A_j}{A_i}
+		\end{equation}
+		
+		where:
+		
+		\begin{itemize}
+			\item $B_i$, $B_j$ are the radiosities of the surface elements i and j, measured as energy per time unit and surface unit (W/m$^2$)
+			\item $E_i$ is the emission rate. $> 0$ for light sources, else $0$
+			\item $\rho_i$ is the reflection coefficient ($0 \leq \rho_i \leq 1$)
+			\item $F_{j-1}$ is a form factor or configuration factor: the amount of energy, which leaves the element j and arrives at the element i. (shape, orientation and hindrance of both elements)
+			\item $A_i$, $A_j$ are the areas of i and j
+			\item $N$ is the amount of surface elements in a scenery.
+		\end{itemize}
+	\item approximation of the form factors: semi-cubes or hemispheres are used. (Figure 3.128)
+	\item IMPORTANT read the page 3-108 to 3-115 carefully.
+\end{itemize}
+
+\subsection{Textures}
+
+\subsubsection{The Different Kinds of Textures}
+
+\subsubsection{The Mapping of Textures}
 
 \end{document}
