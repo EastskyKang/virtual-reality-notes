@@ -940,4 +940,119 @@ Figure 3.95
 		\end{itemize}
 \end{itemize}
 
+\subsubsection*{Texture Mapping}
+       
+\begin{itemize}
+	\item texture mapping process: from the texture plane (u, v) into 3D object space (r, s, t)$\rightarrow$ from the object space into the 2D image field.
+	\item calculating pixel position: positions of a pixel in the image field $\rightarrow$ object space (r, s, t)$\rightarrow$ texture plane (u, v)
+		\begin{enumerate}
+			\item start from the pixel. 
+			\item rectangular (or quadratic) pixel area (4 corner of one pixel) onto the object's surface (if the object surface is not parallel to the monitor surface, mapping defines an amount of points in the object's (r, s, t) coordinate system)
+			\item map (r, s, t) to (u, v) (4 points) 
+			\item (u, v) points in the pattern defines a quadrangle. 
+			\item value for pixel is calculated by adding all texel values in the defined quadrangle.
+		\end{enumerate}
+	\item texels: individual elements of the texture image.
+		\begin{itemize}
+			\item multiple texels could be mapped onto one pixel
+		\end{itemize}
+	\item time consuming. (not real time)
+\end{itemize}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{3_154}
+\end{figure} 
+
+\subsubsection*{2-Phase Texture Projection}
+
+\begin{itemize}
+	\item if a texture is mapped onto neighboring surface element: junction line between two surfaces is not noticed.
+	\item solution:
+		\begin{enumerate}
+			\item texture firstly mapped onto a simple geometry which surrounds the object (intermediate surface mapping) 
+			\item texture is mapped onto the inside of the surrounding geometry
+			\item from surrounding to every point of the object.
+		\end{enumerate} 
+	\item simple geometries for intermediate surfaces: spheres, cones, cylinders, cubes
+\end{itemize}       
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{3_160}
+\end{figure} 
+
+\subsubsection*{2-Phase Projection onto a cylinder}
+
+\begin{align}
+	x &= r \sin (u \cdot 2 \cdot \theta) \\
+	y &= v \\
+	z &= r \cos (u \cdot 2 \cdot \theta)
+\end{align}
+
+\begin{align}
+	u &= \frac{\arcsin \big( \frac{x}{r} \big)}{2 \cdot \theta} \\
+	v &= y 
+\end{align}
+
+\begin{itemize}
+	\item where $r$ is the radius and $\theta$ ($0 \leq \theta \leq 2\pi$) is the angle of the z-axis. u, v is ($0 \leq u, v \leq 1$)
+	\item procedure can only be used for dedicated geometries. (if not, large distortion)
+\end{itemize}
+
+
+\subsubsection*{2-Phase Projection onto a sphere}
+
+\begin{align}
+	x &= r \sin \theta \cos \phi = r \sin (v \cdot \pi) \cos (u \cdot 2 \cdot \pi) \\
+	y &= r \sin \theta \sin \phi = r \sin (v \cdot \pi) \sin (u \cdot 2 \cdot \pi) \\
+	z &= r \cos \theta = r \cos (v \cdot \pi)
+\end{align}
+
+\begin{align}
+	v &= \frac{\arccos \big( \frac{z}{r} \big) }{\pi} \\
+	u &= \frac{\arccos \big( \frac{x}{r \cdot \sin (v \cdot \pi) } \big)}{2 \cdot \pi} 
+\end{align}
+
+\subsubsection*{Environment Mapping}
+
+\begin{itemize}
+	\item approximation using a surrounding geometry differs from the other procedures, because it depends on the location of the user.
+	\item object behaves like an ideal mirror. (reflects the environment)
+	\item object surface = own texture + texture of environment (environment is not static but changes) 
+	\item Types:
+		\begin{itemize}
+			\item spherical 
+			\item dual paraboloid
+			\item cubic
+		\end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{3_164}
+\end{figure} 
+
+\subsubsection*{Spherical environment mapping}
+
+\begin{itemize}
+	\item whole env. is projected into the inside of a sphere.
+	\item only works if the object that has to be mapped by the texture does not change its position. (if not, complete surrounding texture should be recalculated)
+	\item can be supported by graphics card 
+	\item read the page 3-127 to 3-128
+\end{itemize}
+
+\subsubsection*{Dual Paraboloid}
+
+\begin{itemize}
+	\item mapping uses two textures: back texture + front texture (rectangular but parabolically distorted)
+	\item independent of the user's viewpoint (than spherical env mapping)
+	\item but textures are difficult to generate.
+\end{itemize}
+
+\subsubsection*{Cubic Environment Mapping}
+
+\begin{itemize}
+	\item instead of applying only one texture, map six different sides, which are placed around the object like a large cube
+	\item in principal, is not restricted to one viewpoint. (realistic but computationally expensive)
+	\item more correct reflection of the environment, but is not completely correct since some distortion could apprear at the edges and corners due to an imprecise calculation. 
+\end{itemize}
+      
 \end{document}
