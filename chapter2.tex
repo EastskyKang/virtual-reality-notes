@@ -36,7 +36,7 @@
 \subsubsection{Viewing Angle}
 \begin{itemize}
 	\item Field of view characterized by: optical setup of the eye / the position of the eye in the face
-	\item although field of view is very large perception of sharp images only possible in much smaller area ($2 ~ 3\deg$)
+	\item although field of view is very large perception of sharp images only possible in much smaller area ($2 \sim 3\deg$)
 	\item viewing cones of both eyes overlap in a range of approximately 120 degrees
 	\item Four opening angles of the field of view
 \begin{table}[H]
@@ -217,6 +217,7 @@
 		\item contours: there's certain force to see contours.
 			\begin{itemize}
 				\item but this kind of perception only works if the user has seen the shape(e.g. triangle in the following figure) before.
+				\item known patterns paly an important role.
 			\end{itemize}
 			\begin{figure}[H]
 			\centering
@@ -235,12 +236,24 @@
 			\item static images seem to move when viewing at different areas of the image
 			\item depends on difference in brightness : from black to dark gray / white to light gray
 		\end{itemize}
-	\item Hermann grid: width of the white lines corresponds to the diameter of the receptive fields on the retina(contrast amplification by ON-center neurons, OFF-center neurons)
+	\item Hermann grid
+		\begin{itemize}
+			\item due to the contrast amplification by neurons.
+			\item white or gray grid on a black background. 
+			\item width of the white lines corresponds to the diameter of the receptive fields on the retina(contrast amplification by ON-center neurons, OFF-center neurons)
+			\item seems like gray dots are on the cross-sections
+			\item white line is perceived to be very light, but crossing is perceived to be less light.
+		\end{itemize} 
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width = 0.7\linewidth]{Figures/2_58.png}
 		\end{figure}
-		\item scintillating grid: consists of a herman grid with gray lines on a black background, with white dots on the crossing(effect: outside the zone of interest, black dots appear instead of original white dots)
+		\item scintillating grid
+			\begin{itemize} 
+				\item consists of a herman grid with gray lines on a black background, with white dots on the crossing(effect: outside the zone of interest, black dots appear instead of original white dots)
+				\item due to unconscious moves of eye balls (but since user cannot focus on the black dots it only appears temporarily)
+				\item unlike the Hermann grid, this effect to intensive, and cannot be explained by a simple contrast phenomenon.
+			\end{itemize}
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width = 0.7\linewidth]{Figures/2_59.png}
@@ -249,35 +262,47 @@
 \end{itemize}
 \subsubsection*{Stereoscopic viewing}
 \begin{itemize}
-	\item In order to focus both eyes on the object, they are directed onto the object. THis will result in a convergence angle between the optical axes of both eyes	
-	\item The point is projected on non-corresponding areas on the retina on both eyes. This gives a spatcial impression
+	\item \textbf{physiological aspects!}
+	\item In order to focus both eyes on the object, they are directed onto the object. This will result in a convergence angle between the optical axes of both eyes	
+	\item by disparity (horizontal parallex), brain generate 3D image
+	\item The point is projected on non-corresponding areas on the retina on both eyes. This gives a spacial impression
+	\item only works for $<$ 10 m 
 \end{itemize}
 \subsubsection{Conflicts between Virtual Reality and the Physiological and Psychological Visual Perception}
 \begin{itemize}
-	\item Since all virtual objects are visible on the projection plane (2D screen), the human eye does not have to perform an accommodation(physiological) anymore, but only focuses once on the given distance between the user and the projection plane
+	\item Since all virtual objects are visible on the projection plane (2D screen), the human eye does not have to perform an accommodation(physiological) anymore, but only focuses on the given distance between the user and the projection plane
 	\item 3D impression still possible but eyes are easily fatigued
 	\item psychological aspects are also not fulfilled (e.g. perception of size, resolution etc.)
-	\item in VR physiologic and psychologit perceptions are not combined anymore. $\rightarrow$ rapid fatigue
+	\item in VR physiologic and psychology perceptions are not combined anymore. $\rightarrow$ rapid fatigue
 \end{itemize}
+
 \subsection{The Human Ear}
 \begin{itemize}
 	\item Functionality of hearing
-	\item Sound signals and sound sources
-	\item Location of sound sources
-	\item sensitivity and loudness(very important psychological factor)
+		\begin{itemize}
+			\item identification of objects (sound signal and sources)
+			\item spatial orientation (location of sound source)
+			\item protection / warning
+			\item social contact (communication)
+			\item psychological factors
+		\end{itemize}
+	\item properties: sound signal and source / location / sensitivity and loudness
 	\item When simulating objects in virtual environments, the acoustical sensation is very important
+	\item sound $\rightarrow$ transmission $\xrightarrow[\text{signal}]{}$ sense cell $\xrightarrow[\text{electric pulse}]{}$ brain 
 \end{itemize}
+
+\setcounter{subsubsection}{1}
 \subsubsection{Spatial Hearing}
-Spatial hearing desribes the accoustical determination of a sound source's position in a room. Two princilples:
+Spatial hearing desribes the accoustical determination of a sound source's position in a room. Two principles:
 \begin{itemize}
-	\item monaural hearing
+	\item monaural hearing (one ear)
 	\begin{itemize}
-		\item Using one ear only: very rough localization($\pm 20 \deg deviation from correct localization$) : does not play important role
+		\item Using one ear only: very rough localization($\pm 20 \deg$ deviation from correct localization) : does not play important role
 	\end{itemize}
-	\item binaural hearing
+	\item binaural hearing (two ears)
 	\begin{itemize}
-		\item difference in intensity: only possible if wavelength of the sound is small compared to the size of the head
-		\item difference in runtime: brain capable of detect runtime differences of approximately 30us
+		\item difference in intensity (by acoustical shadow): only possible if wavelength of the sound is small compared to the size of the head 
+		\item difference in runtime: brain capable of detect runtime differences of approximately 30 us
 		\item resolution: can calculate by the following $\rightarrow$ $3\deg$ (should be large than $3\deg$)
 			\begin{align}
 				\Delta x &= d sin \alpha \\
@@ -293,16 +318,28 @@ Spatial hearing desribes the accoustical determination of a sound source's posit
 			\includegraphics[width = 0.7\linewidth]{Figures/2_68.png}
 		\end{subfigure}
 		\end{figure}
-	\item Allocation Problems of the ear
-			\begin{itemize}
-			\item Shephard effect: simulates increasing melody to the user although the pitch stays constant all the time
-		\end{itemize}
 \end{itemize}
+
+\setcounter{subsubsection}{3}
+\subsubsection{Allocation Problems of the Ear}
+
+\begin{itemize}
+	\item does not have many allocation problems. 
+	\item Shephard effect: simulates increasing melody to the user although the pitch stays constant all the time
+\end{itemize}
+
 \subsection{The Haptic Channel}
 \subsubsection{The Human Information Flow}
 \begin{itemize}
 	\item the entirety of all perceptions through the sense of touch
-	\item about 80 \% of all information is perceived by the visual sense, other 15 \% by the auditory sense. The remaining 5 \% are fr the haptic and olfactoric sense. 
+	\item about 80 \% of all information is perceived by the visual sense, other 15 \% by the auditory sense. The remaining 5 \% are for the haptic and olfactory sense. 
+	\item but still important for immersion
+	\item human information flow: environment $\rightarrow$ human $\rightarrow$ environment
+		\begin{itemize}
+			\item human perception: $10^9$ bit/s from env.
+			\item only 10 $\sim$ 100 bit/s is perceived consciously. 
+			\item human emission: $10^7$ bit/s (via speech, gesture ...)
+		\end{itemize}
 \end{itemize}
 \subsubsection{The Haptic Perception}
 \begin{itemize}

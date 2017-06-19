@@ -7,9 +7,9 @@
 \subsection{Introduction}
 
 \begin{itemize}
-	\item Quick development in computer graphics: from an expensive toy to an attractive research field
+	\item Quick development in computer graphics: from `an expensive toy' to an `attractive research field'
 		\begin{itemize}
-			\item main reason: human receives most of the information through the visual perception channel
+			\item main reason: human receives most of the information through the \textbf{visual perception channel}
 			\end{itemize}
 	\item Rapid development concerning hardware, software, and applications
 		\begin{itemize}
@@ -20,47 +20,54 @@
 \subsection{Why do we need Computer Graphics?}
 
 \begin{itemize}
-	\item The representation of texts is also a special form of graphics
-	\item Human being seems to have a better access to images and pictures than letters and numbers
+	\item why graphic $>$ text?
 		\begin{itemize}
-			\item e.g. complex simulation results by visualization, logo of a company
+			\item The representation of texts is also a special form of graphics
+			\item Human being seems to have a better access to images and pictures than letters and numbers
+				\begin{itemize}
+					\item e.g. complex simulation results by visualization or logo of a company
+				\end{itemize}
 		\end{itemize}
 \end{itemize}
 
-\subsubsection*{Computer Graphics and Picture Recognition}
+\subsubsection{Computer Graphics and Picture Recognition}
 
 \includegraphics[scale=0.6]{3_1}
 
 \begin{itemize}
-	\item When a human perceives the surrounding world, the brain generates an abstract "data model"
+	\item When a human perceives the surrounding world, the brain generates an abstract ``data model"
 	\item Computer Vision: extract relevant data out of existing graphics or images
-	\item Computer Graphics: display the data
+	\item Computer Graphics: display abstracted data as a image
 \end{itemize}
 
 \subsection{Applications of Computer Graphics}
 
-\subsubsection*{CAD}
+\subsubsection{CAD}
 
 \begin{itemize}
-	\item Construction (Functional Design)
-	\begin{itemize}
-		\item the requirements to an assembly part are well defined by function and dimension
-		\item all drawings on a CAD system are a complex relationship between dimensions, constraints, and material properties, which describe a part very well
-	\end{itemize}
-	\item Design (Aesthetic Design)
-	\begin{itemize}
-		\item do not focus on the dimension of a part, but factors like ergonomics or aesthetics
-		\item many suppliers of design software try to combine the relatively free aesthetic design field with the very compulsory functional design, but hasn't been successful due to difficult exchange of data between both worlds
-	\end{itemize}
+	\item one of the most important application 
+	\item construction vs design
+		\begin{itemize}
+			\item Construction (Functional Design)
+				\begin{itemize}
+					\item the requirements to an assembly part are well defined by function and dimension
+					\item all drawings on a CAD system are a \textbf{complex relationship between dimensions, constraints, and material properties}, which describe a part very well
+				\end{itemize}
+				\item Design (Aesthetic Design)
+				\begin{itemize}
+					\item \textbf{do not focus on the dimension of a part}, but factors like ergonomics or aesthetics
+				\end{itemize}
+			\item many suppliers of design software try to combine the relatively free aesthetic design field with the very compulsory functional design, but hasn't been successful due to difficult exchange of data between both worlds
+		\end{itemize}
 \end{itemize}
 
-\subsubsection*{Gaming}
+\subsubsection{Gaming}
 \begin{itemize}
-	\item Caused a significance increase of graphic performance in the private computer sector
-	\item Cheap components and fast, high- quality software were developed due to the growing demands of players and the competition of the industry
+	\item Caused a significance increase of graphic performance in the \textbf{private computer sector}
+	\item Cheap components and fast, high-quality software were developed due to the growing demands of players and the competition of the industry
 \end{itemize}
 
-\subsubsection*{Visualization}
+\subsubsection{Visualization}
 
 \begin{itemize}
 	\item Visualization is the ancestor of 3D computer graphics
@@ -77,15 +84,15 @@
 	\end{center}
 	Thus, a good visualization has the following properties:
 	\begin{itemize}
-		\item it prevents misinterpretation and ambiguity
-		\item it optimizes the perception of subtle properties
-		\item it allows displaying more data at a time
+		\item it \textbf{prevents misinterpretation} and ambiguity
+		\item it \textbf{optimizes the perception} of subtle properties
+		\item it allows displaying \textbf{more data} at a time
 	\end{itemize}
 	\item Typical data sets which need to be visualized very often:
 	\begin{itemize}
-		\item MRI (the density can be visualized by different colors and transparencies)
-		\item CFD (the location and the direction of movement of points with 6 DOF, color and particles, size or shape can display the information)
-		\item Financial Data (display in a diagram, so that a user can see correlations between variables)
+		\item MRI: the density can be visualized by different colors and transparencies + cutting plane
+		\item CFD: the location and the direction of movement of points with 6 DOF, color and particles, size or shape can display the information
+		\item Financial Data: display in a diagram, so that a user can see \textbf{correlations} between variables
 		\item CAD (3D data with additional information for edges, corners, surfaces, and surface properties. Complex data structures are used because the data is used not only for visualization but also for other processes. Complexity of the models strongly depends on the display quality)
 		\item Statistical data sets (the correlation between different parameters only can be seen through visualization)
 	\end{itemize}
@@ -886,17 +893,39 @@ Figure 3.95
 \begin{itemize}
 	\item why texture? 
 		\begin{itemize}
-			\item creating realistic obj.
-			\item creating surface properties
+			\item creating \textbf{realistic obj}.
+			\item creating \textbf{surface properties}
 			\item visualize contours
 			\item distinguish between different parts of an obj.
 		\end{itemize}
-	\item complex object (e.g. golf ball) needs large amount of polygons $\rightarrow$ texture is an efficient alternative
-	\item how an image or a bitmap is applied to a polygon
-	\item two methods to create texture
+	\item two methods for realistic 3D object
 		\begin{itemize}
-			\item designing texture manually
-			\item mathematical methods
+			\item model the unevenness of the object completely. (modeling texture)
+				\begin{itemize}
+					\item all details are modeled seperately and combined. 
+					\item superior realism
+					\item huge computing effort (for everytime when the view point changes)
+				\end{itemize}
+			\item pretend the unevenness with an image (texture mapping)
+				\begin{itemize}
+					\item reduces calculation
+					\item if large angle between the viewing angle and the perpendicular or zoom-in $\rightarrow$ not realistic
+				\end{itemize}
+			\item should be carefully decided (e.g. if the object is far, texture is more reasonable)
+		\end{itemize} 
+	\item conclusion: complex object (e.g. golf ball) needs large amount of polygons and if surface properties should be visualized $\rightarrow$ texture is an efficient alternative
+	\item classification of textures
+		\begin{figure}
+			\includegraphics[width=\linewidth]{3_150}
+		\end{figure}
+	\item issues:
+		\begin{itemize}
+			\item how to create
+				\begin{itemize}
+					\item designing texture manually
+					\item mathematical methods
+				\end{itemize}
+			\item how to map
 		\end{itemize}
 \end{itemize}
 
@@ -906,28 +935,28 @@ Figure 3.95
 	\item classification 
 		\begin{itemize}
 			\item 2D vs 3D
+			\item texture defines the changes in color and intensity of the object's surface
 		\end{itemize}
 \end{itemize}
 
 \subsubsection*{Bump Mapping}
 
 \begin{itemize}
-	\item within a bump map, the amount is stored by which the normals are changed towards the perpendiculars of the surfaces. (2D geometry is preserved, but normal vectors are changed)
-	\item color, intensities are not changed
-	\item bump map: array of shift values. 
-	\item Bump-Mapping cannot be combined with interpolation illumination models: Phong, Raytracing (o) Gouraud (x) (After G., everything is changed into flat)
+	\item within a bump map, the amount is stored by which the normals are changed towards the perpendiculars of the surfaces. (2D geometry is preserved, but normal vectors are changed) - thus no additional polygons
+	\item color, intensities are not changed (thus color change should be saved separately)
+	\item \textbf{bump map: array of shift values.} 
+	\item \textbf{Bump-Mapping cannot be combined with color interpolation illumination models}: Phong, Raytracing (o) Gouraud (x) (After G., everything is changed into flat)
 \end{itemize}
 
 \subsubsection*{3D Texture}
 
 \begin{itemize}
-	\item AKA texture mapping: the textures on the surface of the object are a result of the several cuts in the 3D texture space.
+	\item the textures on the surface of the object are a result of the \textbf{several cuts} in the 3D texture space.
 \end{itemize}
 
 \begin{figure}
 	\includegraphics[width=\linewidth]{3_153}
 \end{figure}
-
 
 \subsubsection{The Mapping of Textures}
 
@@ -950,7 +979,7 @@ Figure 3.95
 			\item rectangular (or quadratic) pixel area (4 corner of one pixel) onto the object's surface (if the object surface is not parallel to the monitor surface, mapping defines an amount of points in the object's (r, s, t) coordinate system)
 			\item map (r, s, t) to (u, v) (4 points) 
 			\item (u, v) points in the pattern defines a quadrangle. 
-			\item value for pixel is calculated by adding all texel values in the defined quadrangle.
+			\item value for pixel is calculated by adding all texel values in the defined quadrangle. (if (u, v) is outside the texture map, the pattern simply repeated)
 		\end{enumerate}
 	\item texels: individual elements of the texture image.
 		\begin{itemize}
