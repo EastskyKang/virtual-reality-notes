@@ -36,8 +36,9 @@
 \subsubsection{Viewing Angle}
 \begin{itemize}
 	\item Field of view characterized by: optical setup of the eye / the position of the eye in the face
-	\item although field of view is very large perception of sharp images only possible in much smaller area ($2 \sim 3\deg$)
+	\item although field of view is very large perception of sharp images only possible in much smaller area ($2 \sim 4\deg$)
 	\item viewing cones of both eyes overlap in a range of approximately 120 degrees
+	\item human eye can twist $\pm 45 \deg$ (in practice $\pm 20 \deg$)
 	\item Four opening angles of the field of view
 \begin{table}[H]
 \centering
@@ -47,7 +48,7 @@
 60 deg & 100 deg & 60 deg & 70 deg \\ \hline
 \end{tabular}
 \end{table}
-	\item resolution: in the distance of 5 m, resolve object 1.5 mm away from each other. ($\approx 8400 \times 5400 px$)
+	\item resolution: in the distance of 5 m, resolve object 1.5 mm away from each other. ($\approx 8400 \times 5400$ px)
 	\item Note 
 		\begin{itemize} 
 			\item FOV w/o turning head $= 155\deg$ (horizontal), $113\deg$ (vertical) 
@@ -68,7 +69,7 @@
 \subsubsection{Accommodation and Convergence}
 \begin{itemize}
 	\item eye focuses onto shortest possible distance until object is visible: needs edges, patterns or contours to focus: In complete darkness, the eye cannot focus anymore
-	\item results in near sightedness when looking through a optical device (e.g. Head Mounted Display)
+	\item results in nearsightedness when looking through a optical device (e.g. Head Mounted Display)
 	\item convergence: depth estimation up to 10 meters is made with stereoscopic vision ($\epsilon$ is convergence angle) $\tan \frac{\epsilon}{2} = \frac{a}{2} \frac{1}{e}$
 	
 	\begin{figure}[H]
@@ -76,7 +77,7 @@
 	\end{figure}
 	
 	\item accommodation: optical adaptation of the eye to different distances by changing the refraction of the lens (by muscle: straining muscle $\rightarrow$ thicker lens $\rightarrow$ near object)
-	\item Note: when using a stereoscopic projection (displaying two images for sense of 3D), only convergence causes the stereoscopic effect. (accommodation stays constant: distance to display)
+	\item Note: when using a stereoscopic projection (displaying two images for sense of 3D), only convergence causes the stereoscopic effect. (accommodation stays constant $\rightarrow$ distance to display)
 \end{itemize}
 
 
@@ -105,7 +106,6 @@
 			\item non-colored brightness: red + green + blue (brightness from uvulas)
 			\item brightness from stick
 			\item processed in retina 
-			\item 
 				\begin{figure}[H]
 				\centering
 				\includegraphics[width = 0.5\linewidth]{Figures/2_16.png}
@@ -130,6 +130,12 @@
 						Y &= \int_{380nm}^{780nm} F(\lambda) \cdot \bar{y}(\lambda) d\lambda \text{green}\\
 						Z &= \int_{380nm}^{780nm} F(\lambda) \cdot \bar{z}(\lambda) d\lambda \text{red}
 					\end{align}
+					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[width=0.7\linewidth]{2_21}
+					\end{figure}
+					
 				\item Note: human eye - many red sensitive uvulas but only in a small bandwidth $\rightarrow$ more sensitive to green. 
 			\end{itemize}
 		\item YUV color model: Takes account the high green sensitivity into, while sensitivity to red and blue is significantly lower (perception oriented color model)
@@ -146,9 +152,13 @@
 				\item additive model: $F = r \cdot R + g \cdot G + b \cdot B$
 				\item color cube:
 					\begin{figure}[H]
-						\includegraphics[width=\linewidth]{2_24.png}
+						\centering
+						\includegraphics[width=0.7\linewidth]{2_24.png}
 					\end{figure}
 			\end{itemize}
+
+		\pagebreak
+
 		\item \textbf{CMY color model}
 			\begin{itemize}
 			 	\item used by objects that do not emit light themselves: reflected light = color (e.g. color used by printers)
@@ -159,6 +169,7 @@
 		\item \textbf{HSV color model(also HSB)}: 
 			\begin{itemize} 
 				\item Defined by hue, saturation, value. In this color model, colors are arranged in a circle around the vertical axis
+				\item immitate human perception
 				\item hue: $0\deg \rightarrow$ red, $120\deg \rightarrow$ green, $240\deg \rightarrow$ blue
 				\item saturation: 0 $\sim$ 255
 				\item intensity: 0 $\sim$ 255
@@ -217,7 +228,7 @@
 		\item contours: there's certain force to see contours.
 			\begin{itemize}
 				\item but this kind of perception only works if the user has seen the shape(e.g. triangle in the following figure) before.
-				\item known patterns paly an important role.
+				\item known patterns play an important role.
 			\end{itemize}
 			\begin{figure}[H]
 			\centering
@@ -346,19 +357,17 @@ Spatial hearing desribes the accoustical determination of a sound source's posit
 	\item The haptic takes place all over the body, thus it is impossible to generate a complete simulation in the haptic field: The human hand is the most relevant element in the field of haptics
 	\item well known input device: mouse and keyboard provide haptic feedback addition to acoustic feedback.
 	\item required for teleoperation
-	\item Using the had to perform a manipulation
+	\item Using the hand to perform a manipulation
 	\begin{itemize}
 		\item Contact Phase: Describes the first contact of the fingers with an object(felt 200 ms after contact)
 		\item Grasping Phase: has the largest flexibility and interactability
-		- Grasping for increased power / Grasping with increased dexterity
+		\begin{itemize}
+			\item grasping with increased power: palm
+			\item grasping with increased dexterity: finger tip
+		\end{itemize}
 		\item Touching Phase: For characterizing the properties of objects, different hand-object interactions are needed
 	\end{itemize}
-	\item Grasping can be seperated with thwo fields
-	\begin{itemize}
-		\item grasping with increased power
-		\item grasping with increased dexterity
-	\end{itemize}
-	\item Haptic desribes the influence of foces of any kind onto the human body(tactile propriorceptive, kinesthetic)
+	\item Haptic desribes the influence of forces of any kind onto the human body(tactile propriorceptive, kinesthetic)
 	\begin{itemize}
 		\item tactile: using perception cells in the skin(pressure, temperature, vibration)
 		\item propriorceptive: Influence of force caused by the weight of the object onto the sensors in the musculature
@@ -374,42 +383,77 @@ Spatial hearing desribes the accoustical determination of a sound source's posit
 			\includegraphics[width = 0.7\linewidth]{Figures/2_74.png}
 	\end{figure}
 	\begin{itemize}
-		\item Meissner corpuscles(Fig.2.74->1): rapidly adapting receptors, provide information about the movement across the skin and thus velocity
+		\item Meissner corpuscles(Fig.2.74 $\rightarrow$ 1): rapidly adapting receptors, provide information about the movement across the skin and thus velocity
 		\item Merkel's Disks: slowly adapting receptors, react on pressure stimuli and provide information about vibrations
-		\item Pacininan corpuscles(Fig.2.74->3): rapidly adapting receptors, sense acceleration as well as light touch and vibrations
+		\item Pacininan corpuscles(Fig.2.74 $\rightarrow$ 3): rapidly adapting receptors, sense acceleration as well as light touch and vibrations
 		\item Raffini corpuscles detect pressure and skin shear as well as thermal changes
-		\item Hair-root plexus(Fig.2.74->4) also called follicle, principle mechanoreceptor detects any movement on the skin surface
-		\item Meissner cells(Fig.2.74->1) and hair receptors(Fig.2.74->4): detect the touch.(Not the intensity is important(bending of the hair) but the speed by the sensation changes.
-		\item Pacini cells(Fig.2.74->3) specialized to detect vibrations
+		\item Hair-root plexus(Fig.2.74 $\rightarrow$ 4) also called follicle, principle mechanoreceptor detects any movement on the skin surface
+		\item \textbf{Meissner cells and hair receptors:} detect the touch.(Not the intensity is important(bending of the hair) but the speed by the sensation changes.
+		\item \textbf{Pacini cells:} specialized to detect vibrations
 	\end{itemize}
 	\item receptors can be divided into slowly adapting and rapdily apdapting mechanoreceptors
 	\begin{itemize}
-		\item rapidly adapting receptors respond to onset and often also termination but not throughout during stimulus-> sensorial adaptation
+		\item rapidly adapting receptors: respond to onset and often also termination but not throughout during stimulus sensorial adaptation $\rightarrow$ good for timing information
+		\item slowly adapting receptors: good for spatial characteristics
+	
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.7\linewidth]{Figures/2_77.png}
+		\end{figure}
+		
 	\end{itemize}
 	\item receptors can be classified by spatial resolution and temporal resolution
+	\begin{itemize}
+		\item spatial resolution: depends on the size of the receptive field
+		\item temporal resolution: time difference between one stimulus after another stimulus  
+	\end{itemize}
+	\item P-receptor and D-receptor
 	\begin{itemize}
 		\item intensity receptors: P-receptors
 		\item speed receptors: D-receptors
 		\item PD receptors are a mixture, which measure for example the position of the joints
 	\end{itemize}
-	\item Thermo receptors exist for a temperature range below 36 degrees(cold receptors) and for a temperature range above 36 degrees(heat receptors)
+	\item Thermo receptors
+		\begin{itemize} 
+			\item cold receptor: temperature range below 36 degrees
+			\item heat receptor: a temperature range above 36 degrees
+		\end{itemize}
+		
+		\begin{figure}[H]
+			\includegraphics[width=0.5\linewidth]{2_79}
+		\end{figure}
+		
 \end{itemize}
-	\begin{figure}[H]
-			\centering
-			\includegraphics[width = 0.7\linewidth]{Figures/2_77.png}
-	\end{figure}
 \subsection{The collaboration of all Senses}
-\begin{itemize}
-	\item conscious and unconscious perception can be described using the so-called inner model
-	\begin{itemize}
-		\item Describes the context between the performed action and the expected sensor information
-		\item the inner model contains the expected values of the receptors for the performed action
-	\end{itemize}
-	\item Pushing a button example
-	\begin{figure}[H]
-			\centering
-			\includegraphics[width = 0.7\linewidth]{Figures/2_82.png}
-	\end{figure}
-	\item McGurk effect: If acoustic and visual stimuli are not correlated
+\begin{itemize}		
+	\item inner model 
+		\begin{itemize}
+			\item conscious and unconscious perception can be described using the so-called inner model
+			\begin{itemize}
+				\item Describes the \textbf{context between the performed action and the expected sensor information}
+				\item the inner model contains the expected values of the receptors for the performed action
+				\item no difference between inner model and perceived model: $\rightarrow$ no intervention (performed actions run almost automatically)
+				\item differece between inner model and perceived model: human now has to decide how to react to abnormal behavior $\rightarrow$ not unconscious, needs concentration
+			\end{itemize}
+			\item Pushing a button example
+			\begin{figure}[H]
+					\centering
+					\includegraphics[width = 0.7\linewidth]{Figures/2_82.png}
+			\end{figure}
+			\item VR devices try to supplement by visual or acoustical feedback but still does not match with the inner model 
+		\end{itemize}
+	\item human has sotre recognition patterns, which have to fit the perceived multimodal stimuli (if there's difference, erroneous interpretation)
+		\begin{itemize}
+			\item McGurk effect: If acoustic and visual stimuli are not correlated (visual: /ga-ga/ + audio: /ba-ba/ $\rightarrow$ impression: /da-da/ 
+		\end{itemize}
+	\item dominance of visual / acoustic over haptic (walking example)
+		\begin{itemize}
+			\item human corrects the path by visual or acoustic sensors
+			\item can be used in VR:
+				\begin{itemize}
+					\item slowly turned env: cannot noticed by the user (haptic) $\rightarrow$ focus on a fixed point and follow (visual) $\rightarrow$ curved line
+					\item VR: 90$\deg$ turn vs Real: 180$\deg$ turn
+				\end{itemize}
+		\end{itemize}
 \end{itemize}
 \end{document}

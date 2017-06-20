@@ -35,7 +35,7 @@
 \includegraphics[scale=0.6]{3_1}
 
 \begin{itemize}
-	\item When a human perceives the surrounding world, the brain generates an abstract ``data model"
+	\item When a human perceives the surrounding world, the brain generates an abstract ``data model" $\rightarrow$ same for computers
 	\item Computer Vision: extract relevant data out of existing graphics or images
 	\item Computer Graphics: display abstracted data as a image
 \end{itemize}
@@ -253,11 +253,11 @@
 	\begin{itemize}
 		\item first used in shipyards
 		\item goal: interconnect given points by a smooth line
-		\item points that approximate the curve are called "control points"
+		\item points that approximate the curve are called ``control points"
 		\item mathematical function that delivers the result is named "base function", guarantees that the requirement for continuity in the control points is kept by interpolation or approximation
 	\end{itemize}
 	\item approximation: a curve approximates given control points / interpolation: the calculated curve has to meet the control points exactly; important in both cases that continuity is fulfilled
-	\item "parametric continuity":
+	\item ``parametric continuity":
 	\begin{itemize}
 		\item represented by the letter C and its exponent i which defines the degree of the i\textsuperscript{th} derivation \\
 		\includegraphics[scale=0.5]{3_24}
@@ -283,24 +283,36 @@
 		\item the base function depends on the amount of control points; the whole curve is changed by just changing one point
 		\item in addition to B\'ezier curve, also the first and last control point belong to the curve Q(t)
 		\item always inside a complex polygon, because at least three control points are extreme points
-		\item The Algorithm of de Casteljau: \\
-		The base function of a B\'ezier curve can be calculated by the algorithm of de Casteljau\\
-		idea: choose t and subdivide the first line b\textsubscript{0}b\textsubscript{1} at the distance t
-		\begin{equation}
-			b\textsubscript{0}\textsuperscript{1}(t) = (1-t)b\textsubscript{0}+t b\textsubscript{1}
-		\end{equation}
-		This process is repeated for the lines b\textsubscript{1}b\textsubscript{2} and b\textsubscript{2}b\textsubscript{3}, until in total three new points b\textsubscript{0}\textsuperscript{1}, b\textsubscript{1}\textsuperscript{1}, b\textsubscript{2}\textsuperscript{1} will result \\
-		the calculation is repeated with the three new points and so on \\
-		In general:
-		\begin{equation}
-			b\textsubscript{i}\textsuperscript{r}(t) = (1-t)b\textsubscript{i}\textsuperscript{r-1}+t b\textsubscript{i+1}\textsuperscript{r-1}
-		\end{equation}
-		\begin{equation}
-			b\textsubscript{i}\textsuperscript{r}(t) = b\textsubscript{i}
-		\end{equation}
-		i = number of control points; i=0,...(n-r), r = number of lines; r=1,...,n
+		\item The Algorithm of de Casteljau (iterative):
+			\begin{itemize}
+				\item The base function of a B\'ezier curve can be calculated by the algorithm of de Casteljau
+				\item idea: choose t and subdivide the first line b\textsubscript{0}b\textsubscript{1} at the distance t
+
+				\begin{equation}
+					b\textsubscript{0}\textsuperscript{1}(t) = (1-t)b\textsubscript{0}+t b\textsubscript{1}
+				\end{equation}
+				\item This process is repeated for the lines b\textsubscript{1}b\textsubscript{2} and b\textsubscript{2}b\textsubscript{3}, until in total three new points b\textsubscript{0}\textsuperscript{1}, b\textsubscript{1}\textsuperscript{1}, b\textsubscript{2}\textsuperscript{1} will result 
+				\item the calculation is repeated with the three new points and so on 
+				\item In general:
+
+				\begin{align}
+					b\textsubscript{i}\textsuperscript{r}(t) &= (1-t)b\textsubscript{i}\textsuperscript{r-1}+t b\textsubscript{i+1}\textsuperscript{r-1}
+					b\textsubscript{i}\textsuperscript{r}(t) &= b\textsubscript{i}
+				\end{align}
+
+				where $i =$ number of control points; $i=0,\dots,(n-r)$, $r =$ number of lines; $r=1,\dots,n$
+			\end{itemize}
+			
+			\begin{figure}[H]
+				\begin{subfigure}[b]{0.3\textwidth}
+					\includegraphics[width=\linewidth]{3_29} 
+				\end{subfigure}
+				\begin{subfigure}[b]{0.65\textwidth}
+					\includegraphics[width=\linewidth]{3_30}		
+				\end{subfigure}
+			\end{figure}
 	\end{itemize}
-	\includegraphics[scale=0.75]{3_29} \includegraphics[scale=0.75]{3_30}
+	
 	\begin{itemize}
 		\item For a better approximation of the curve, more control points have to be used which will increase the computing time
 		\item The algorithm of de Castelijau can also be used, if more than four control points exist
@@ -352,13 +364,15 @@
 \subsubsection*{Volumetric Models}
 
 \begin{itemize}
-	\item The goal is to create objects that can be generally used (not only suitable for special applications)
+	\item The goal is to create objects that can be generally used 
 	\item Only complete representations of physical objects are accepted
-	\item Volumetric models can be distinguished into: \\
-	cell models: these models discretize the required space of the object \\
-	accumulative models: the object consists of a sum of basic elements \\
-	generative objects: predefined volumetric elements (primitives) and Boolean operations on the elements \\
-	other models: parametric models(e.g. CAD), sweep models, breakdown into elements(FEM)
+	\item Volumetric models can be distinguished into: 
+		\begin{itemize}
+			\item cell models: discretize the required space of the object 
+			\item accumulative models: the object consists of a sum of basic elements 
+			\item generative objects: predefined volumetric elements (primitives) and Boolean operations on the elements 
+			\item other models: parametric models(e.g. CAD), sweep models, breakdown into elements(FEM)
+		\end{itemize}
 	\item CSG(Constructive/Computational Solid Geometry)
 	\begin{itemize}
 		\item 3 primitive methods to shape geometry out of simple objects: merging parts(set union), cutting parts out(difference), calculate common parts of objects(intersection) $\rightarrow$ this approach is used by CSG
@@ -368,7 +382,7 @@
 	\includegraphics[scale=0.8]{3_62}
 	\item Cell Models
 	\begin{itemize}
-		\item In analogy to pixel models, cell models use voxels(volume elements) of uniform size to represent volumetric models
+		\item In analogy to pixel models, cell models use \textbf{voxels(volume elements)} of uniform size to represent volumetric models
 		\item the voxels are arranged in a regular 3D grid and are represented by the coordinates of the cell's center
 		\item the maximum resolution is defined by the cell size
 		\item the representation of 3D objects using cell models is suitable for the computation of volumes and other Boolean operations; however the geometrical elements(corner, edge, surface) can only be represented imprecisely or with a large effort
