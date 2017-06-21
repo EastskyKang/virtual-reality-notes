@@ -720,7 +720,8 @@ Figure 3.95
 \end{itemize}
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{3_102}
+	\centering
+	\includegraphics[width=0.7\linewidth]{3_102}
 \end{figure}
 
 
@@ -869,7 +870,8 @@ Figure 3.95
 \end{figure}
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{3_123}
+	\centering
+	\includegraphics[width=0.7\linewidth]{3_123}
 \end{figure}
 
 
@@ -899,7 +901,30 @@ Figure 3.95
 			\item $N$ is the amount of surface elements in a scenery.
 		\end{itemize}
 	\item approximation of the form factors: semi-cubes or hemispheres are used. (Figure 3.128)
-	\item IMPORTANT read the page 3-108 to 3-115 carefully.
+	\item IMPORTANT read the page 3-108 to 3-115 carefully. (interaction steps)
+		\begin{enumerate}
+			\item iter1: light source emits light $\rightarrow$ go to patches
+			\item iter2: patches exposed to the light now emitts light $\rightarrow$ go to another patches
+			\item $\dots$
+			\item iter16: no more changes after 16 iterations (termination)
+		\end{enumerate}
+		
+		\item form factors
+			\begin{itemize}
+				\item complex geometry of scene is altered by simplified geometry (mapping)
+				\item hemisphere
+					\begin{itemize}
+						\item fish-eye perspective
+						\item center of the hemisphere is the patch 
+						\item difficult to deform the image in a fish-eye perspective (computationally expensive)
+					\end{itemize} 
+				\item semi-cube
+					\begin{itemize}
+						\item alternative of hemisphere 
+						\item drawback: object originally at the same distance from the patch are distorted (objects at the edges) and object at the edges emits more light $\rightarrow$ correction is needed
+						\item corrections: geometrical + illumination (with Lambert Law) - mask is used (multiplier)
+					\end{itemize}
+			\end{itemize}
 \end{itemize}
 
 \subsection{Textures}
@@ -929,7 +954,7 @@ Figure 3.95
 		\end{itemize} 
 	\item conclusion: complex object (e.g. golf ball) needs large amount of polygons and if surface properties should be visualized $\rightarrow$ texture is an efficient alternative
 	\item classification of textures
-		\begin{figure}
+		\begin{figure}[H]
 			\includegraphics[width=\linewidth]{3_150}
 		\end{figure}
 	\item issues:
