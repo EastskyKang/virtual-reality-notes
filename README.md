@@ -10,3 +10,8 @@ Note: Only for **private purposes.** Some figures are copyrighted. Do not distri
 ## Generating PDF
 
 Compile ```main.tex```
+
+
+## Update
+
+Feel free to fork and update it. You can create a new pull request.
