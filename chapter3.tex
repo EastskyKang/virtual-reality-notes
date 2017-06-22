@@ -237,17 +237,26 @@
 	\item Surface models are mainly used- drawback: there are no relationships among the individual parts of the surface (The individual surfaces are not correlated with an object and thus the shape of an object is a question of interpretation)
 	\item possibilities for the mathematical description of curves and surfaces: explicit, implicit, parametric
 	\begin{itemize}
-		\item explicit: only one value for y is associated with the variable x\\
-		thus problems arise for closed curves or objects\\
-		it is not invariant to rotations\\
-		only a few geometries can be described by such an explicit notation, rarely used
-		\item implicit: typically implicit equations have more solutions than required and thus additional constraints have to be considered\\
-		also rarely used in virtual reality
-		\item parametric: the most common descriptive form\\
-		no equivocations could occur, the definition is invariant to rotations\\
-		infinite slopes can be described by tangential vectors which are finite\\
-		typically consist of rational polynomials of the nth degree, most frequently cubic polynomials are used\\
-		any point of the geometry can be exactly determined by mathematical functions (particular interest for CAD)
+		\item explicit: $y = f(x)$
+		\begin{itemize}
+		  	\item only one value for y is associated with the variable x
+		  	\item thus problems arise for closed curves or objects
+		  	\item it is not invariant to rotations
+		  	\item only a few geometries can be described by such an explicit notation, rarely used
+		\end{itemize}
+		\item implicit: $f(x, y) = 0$
+		\begin{itemize} 
+			\item typically implicit equations have more solutions than required and thus additional constraints have to be considered 
+			\item also rarely used in virtual reality
+		\end{itemize}
+		\item parametric: $Q(t) = (x(t), y(t)$
+		\begin{itemize}
+			\item the most common descriptive form
+			\item no equivocations could occur, the definition is invariant to rotations
+			\item infinite slopes can be described by tangential vectors which are finite
+			\item typically consist of rational polynomials of the nth degree, most frequently cubic polynomials are used
+			\item any point of the geometry can be exactly determined by mathematical functions (particular interest for CAD)
+		\end{itemize}
 	\end{itemize}
 	\item B\'ezier splines:
 	\begin{itemize}
@@ -887,7 +896,7 @@ Figure 3.95
 		\end{itemize}
 	\item radiosity equation: energy leaving is the sum of emiited and reflected light
 		\begin{equation}
-			B_i = E_i + \rho_i \sum_{i \leq j \leq n} B_j F_{j-1} \frac{A_j}{A_i}
+			B_i = E_i + \rho_i \sum_{i \leq j \leq n} B_j F_{j-i} \frac{A_j}{A_i}
 		\end{equation}
 		
 		where:
