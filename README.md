@@ -1,4 +1,4 @@
-# Virtual Reality I Summary (Spring 2017) @ ETH
+# Virtual Reality I Summary
 
 This is a summary of [Virtual Reality I course](https://www.icvr.ethz.ch/education/lectures/vr1/index_EN) of ETH Zurich.
 
@@ -16,4 +16,4 @@ Feel free to fork and update it. You can create a new pull request.
 
 ## Authors
 
-Contributed by Dongho Kang, Jaeyoung Lim, Soomin Lee, Jaeryeong Choi. 
+Contributed by Dongho Kang, Jaeyoung Lim, Soomin Lee, Jaeryeong Choi. (2017)
